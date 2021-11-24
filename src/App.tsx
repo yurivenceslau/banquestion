@@ -4,9 +4,10 @@ import { GlobalStyle } from "./styles/global";
 
 export function App() {
   return (
-    <GlobalStyle>
+    <>
       <Login/>
       <Logado/>
-    </GlobalStyle>
+      <GlobalStyle/>
+    </>
   );
 }
