@@ -1,6 +1,11 @@
+import { Logado } from "./pages/Logado";
+import { Login } from "./pages/Login";
 
 export function App() {
   return (
-    <h1>rum bora de nv</h1>
+    <>
+      <Login/>
+      <Logado/>
+    </>
   );
 }
