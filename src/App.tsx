@@ -9,8 +9,8 @@ export function App() {
   return (
     <>
       {/* <Comocentralizar/> */}
-      {/* <Login/> */}
-      <Logado/>
+      <Login/>
+      {/* <Logado/> */}
       <GlobalStyle/>
     </>
   );
