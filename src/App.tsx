@@ -1,5 +1,5 @@
 // paginas privadas 
-import { Logado } from "./pages/Logado";
+import  Logado  from "./pages/Logado";
 import Comocentralizar from "./pages/Comocentralizar";
 // paginas publicas
 import { Login } from "./pages/Login";
@@ -9,7 +9,8 @@ export function App() {
   return (
     <>
       {/* <Comocentralizar/> */}
-      <Login/>
+      {/* <Login/> */}
+      <Logado/>
       <GlobalStyle/>
     </>
   );

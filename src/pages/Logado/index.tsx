@@ -187,7 +187,7 @@ export default function MiniDrawer() {
   );
 }
 
-export function Logado() {
+// export function Logado() {
   
 
   
@@ -202,5 +202,5 @@ export function Logado() {
   //     // </Content>
   //   // </Container>
   // );
-}
+// }
 
