@@ -9,17 +9,21 @@ export const Container = styled.div`
     justify-content: center;
     margin: auto;
     padding: 1rem 0;
-    background-color: firebrick;
-    min-height: 75.7vh;
+    min-height: 65.5vh;
 
 `
 export const Content = styled.form`
+    background-color: #1A6462;
     border-radius: 0.5rem;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
-    max-width: 450px;
+    max-width: 350px;
     width: 100%;
-    min-height: 400px;
-    display:flex;
+    min-height: 300px;
+    display: flex;
+    background-color: #1a6462;
+    border: 0.1px solid black;
+    /* background-color: #f5f5f5; */
+    
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -28,7 +32,7 @@ export const Content = styled.form`
         background-color: white;
         border: 0;
         height: 2.2rem;
-        width: 20rem;
+        width: 14rem;
         border-radius: 0.25rem;
         text-align: center;
     }
@@ -55,12 +59,17 @@ export const Content = styled.form`
 
 
 `
-export const Info = styled.span`
+export const Info = styled.h1`
     display: flex;
     flex-direction: row;
-    margin-bottom: 0.7rem;
+    margin-bottom: 1rem;
     align-items: center;
-    font-size: 0.83rem;
-    font-weight: 510;
+    font-size: 1rem;
+    font-weight: 500;
+
+    span{
+        font-size: 1.3rem;
+        margin-top: -1rem;
+    }
 
 `
