@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     width: 100%;
-    height: 13rem;
+    height: 11rem;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ export const Container = styled.div`
     border-bottom: 0.5rem solid #059e75;
 
     h1{
-        font-size: 3.4rem;
+        font-size: 3.1rem;
         margin: 0.1rem;
     }
     

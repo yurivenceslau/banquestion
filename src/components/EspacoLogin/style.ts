@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import logoAlan from "../../imagens/logoAlan.png"
 
 export const Container = styled.div`
     color: #fffdfe;
@@ -9,7 +10,7 @@ export const Container = styled.div`
     justify-content: center;
     margin: auto;
     padding: 1rem 0;
-    min-height: 65.5vh;
+    min-height: 61.5vh;
 
 `
 export const Content = styled.form`

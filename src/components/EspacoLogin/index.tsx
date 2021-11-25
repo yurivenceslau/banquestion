@@ -1,5 +1,6 @@
 import { Container, Content, Info } from "./style";
 import React, { useState, useEffect} from "react";
+import logoAlan from "../../imagens/logoAlan.png"
 
 
 export function EspacoLogin(){
@@ -30,6 +31,7 @@ export function EspacoLogin(){
 
     return(
         <Container>
+            <img src={logoAlan} alt="logoAlan" />
             <Content onSubmit = {handleSubmit}>
                 <Info>
                     <span>Faça login para acessar</span>
