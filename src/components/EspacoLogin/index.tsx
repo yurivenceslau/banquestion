@@ -32,12 +32,11 @@ export function EspacoLogin(){
         <Container>
             <Content onSubmit = {handleSubmit}>
                 <Info>
-                    <span>Insira seus dados aqui para ter acesso ao site</span>
+                    <span>Faça login para acessar</span>
                 </Info>
                 <input type="text" name="user" onChange={handleChange} placeholder="Login" />
                 <input type="password" name="password" onChange={handleChange} placeholder="Senha" />
                 <button type="submit">Acessar Conta</button>
-                <a href="">Tenha acesso ao .Manager rapidamente AQUI!</a>
             </Content>
         </Container>
     )
