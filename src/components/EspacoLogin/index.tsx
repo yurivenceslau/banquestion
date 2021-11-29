@@ -38,7 +38,7 @@ export function EspacoLogin(){
                 </Info>
                 <input type="text" name="user" onChange={handleChange} placeholder="Login" />
                 <input type="password" name="password" onChange={handleChange} placeholder="Senha" />
-                <button type="submit">Acessar Conta</button>
+                <button type="submit">ACESSAR</button>
             </Content>
         </Container>
     )
