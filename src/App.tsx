@@ -31,12 +31,17 @@ export function App() {
         <MainRoutes/>
       </div>
       {/* <Comocentralizar/> */}
+<<<<<<< HEAD
       {/* <Login/> */}
       <Logado 
         handleDrawerClose={()=>handleDrawerClose()} 
         handleDrawerOpen={()=>handleDrawerOpen()}
         open={open}
       />
+=======
+      <Login/>
+      {/* <Logado/> */}
+>>>>>>> b191497e8917d6c9608bf6a0052bfdae3fa300a7
       <GlobalStyle/>
       </Router>
   );
