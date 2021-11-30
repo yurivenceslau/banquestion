@@ -5,19 +5,25 @@ export const Container = styled.div`
     color: white;
     display: flex;
     flex: 2.5;
-    height: 100vh;
+    min-height: 100vh;
     flex-direction: column;
     width: 30rem;
     align-items: center;
     justify-content: center;
     margin: auto;
-    min-height: 61.5vh;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    /* min-height: 61.5vh; */
     
     img{
         margin-bottom: 2rem;
         width: 21rem;
         height: 4rem;
+    }
+
+    @media screen and (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
     }
 `
 export const Content = styled.form`
@@ -66,6 +72,8 @@ export const Content = styled.form`
 
 
 `
+
+
 export const Info = styled.h1`
     display: flex;
     flex-direction: row;
