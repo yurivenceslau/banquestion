@@ -1,6 +1,7 @@
-import { Container, Content, Info } from "./style";
+import { Container, Contatos, Content, Info } from "./style";
 import React, { useState, useEffect} from "react";
 import logoAlan from "../../imagens/logoAlan.png"
+
 
 
 export function EspacoLogin(){
@@ -39,6 +40,10 @@ export function EspacoLogin(){
                 <input type="text" name="user" onChange={handleChange} placeholder="Login" />
                 <input type="password" name="password" onChange={handleChange} placeholder="Senha" />
                 <button type="submit">ACESSAR</button>
+                <Contatos>
+                    <strong>Nao conseguiu acessar seu Portal?</strong>
+                    <a href="">Entre em contato conosco!</a>
+                </Contatos>
             </Content>
         </Container>
     )

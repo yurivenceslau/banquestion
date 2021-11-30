@@ -1,5 +1,5 @@
 import { Container } from "./style";
-// import logoAlan from "../../imagens/logoAlan.png"
+
 
 export function Cabecalho(){
     return(

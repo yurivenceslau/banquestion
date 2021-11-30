@@ -24,9 +24,9 @@ export const Content = styled.form`
     /* background-color: #1A6462; */
     border-radius: 0.5rem;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
-    max-width: 420px;
+    max-width: 430px;
     width: 100%;
-    min-height: 300px;
+    min-height: 400px;
     display: flex;
     /* background-color: #f5f5f5; */
     flex-direction: column;
@@ -78,6 +78,28 @@ export const Info = styled.h1`
         font-size: 1.8rem;
         margin-top: -1rem;
         color: #1A6462;
+    }
+
+
+`
+export const Contatos = styled.div`
+    color: #1A6462;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    border-top: 0.1px solid rgba(0, 0, 0, 0.4);
+    width: 19rem;
+
+
+    strong{
+        font-weight: 550;
+        margin-top: 1.5rem;
+    }
+    a{
+        color: #1A6462;
+
     }
 
 `
