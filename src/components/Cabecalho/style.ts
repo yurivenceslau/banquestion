@@ -14,22 +14,30 @@ export const Container = styled.div`
     /* background-image: linear-gradient(to left top, #1A6462, #059E75); */
     background-image: url(${backAlan});
     background-size: cover;
-    color: black;
+    color: white;
     
-
-    h1{
-        font-size: 2.53rem;
-        margin: 0.3rem;
-        z-index: 2;
-    }
     
-`;
+`
 
 export const Corzinha = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: green;
+    background-image: linear-gradient(to bottom right, #1A6462, transparent);
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    text-shadow: 0px 0px 20px rgba(12,12,14,20);
+    
+    h1{
+        font-size: 2.24rem;
+        margin: 0.3rem;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
 
-`
+`;
+
