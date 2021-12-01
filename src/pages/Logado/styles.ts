@@ -9,10 +9,23 @@ export const Container = styled.main`
     align-items: center;
     width: 100%;
     padding-left:0.5rem;
-    background-color: white;
-
+    /* background-color: white; */
     border: 0;
+    background-color: #E6E6E8;
+    /* box-shadow: rgba(0,0,0,0.9); */
     cursor: pointer;
+
+    &:first-child {
+      margin-bottom: 2rem;
+      
+      padding-left:0.5rem;
+    }
+
+    &:first-child +button{
+      margin-bottom: 2rem;
+
+      padding-left:0.5rem;
+    }
     
     transition: filter,0.2s;
 
@@ -22,7 +35,7 @@ export const Container = styled.main`
 
 
   }
-  img {
+  img{
     display: flex;
     flex: 1;
 

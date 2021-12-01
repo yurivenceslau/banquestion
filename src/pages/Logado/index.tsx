@@ -1,7 +1,7 @@
 import { Container, Content } from "./styles";
 import editarImg from "../../imagens/pen-tool.svg";
 
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 import {
   createStyles,
@@ -24,15 +24,14 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import { useNavigate } from "react-router-dom";
 import { FiAirplay } from "react-icons/fi";
 import { FiCornerUpLeft } from "react-icons/fi";
+import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 //import { PromptProps } from "react-router-dom";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-     
-    },
+    root: {},
     appBar: {
       backgroundColor: "#1a6462 ",
       zIndex: theme.zIndex.drawer + 1,
@@ -63,6 +62,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     drawerOpen: {
       width: drawerWidth,
+      backgroundColor: "#E6E6E8",
+      boxShadow: "3px 5px 5px #aaaaaa",
       transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
@@ -74,6 +75,10 @@ const useStyles = makeStyles((theme: Theme) =>
         duration: theme.transitions.duration.leavingScreen,
       }),
       overflowX: "hidden",
+      backgroundColor: "#E6E6E8",
+      // boxShadow:"(0,0,0,0.9)",
+      // boxShadow: "3px 3px gray, -1em 0 0.4em olive",
+      boxShadow: "3px 5px 5px #aaaaaa",
       width: theme.spacing(7) + 1,
       [theme.breakpoints.up("sm")]: {
         width: theme.spacing(9) + 1,
@@ -81,6 +86,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     toolbar: {
       display: "flex",
+      backgroundColor: "#E6E6E8",
       alignItems: "center",
       justifyContent: "flex-end",
       padding: theme.spacing(0, 1),
@@ -95,18 +101,25 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-
-interface propsLogado{
-  handleDrawerOpen: ()=>void;
-  handleDrawerClose: ()=>void;
-  open: boolean;
-}
-export default function Logado({handleDrawerOpen, handleDrawerClose, open}:propsLogado){
+// interface propsLogado {
+//   handleDrawerOpen: () => void;
+//   handleDrawerClose: () => void;
+//   open: boolean;
+// }
+export default function Logado() {
   const navigate = useNavigate();
   const classes = useStyles();
   const theme = useTheme();
 
-  
+  const [open,setOpen] = useState(false);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -120,7 +133,7 @@ export default function Logado({handleDrawerOpen, handleDrawerClose, open}:props
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={()=>handleDrawerOpen()}
+            onClick={() => handleDrawerOpen()}
             edge="start"
             className={clsx(classes.menuButton, {
               [classes.hide]: open,
@@ -147,7 +160,7 @@ export default function Logado({handleDrawerOpen, handleDrawerClose, open}:props
         }}
       >
         <div className={classes.toolbar}>
-          <IconButton onClick={()=>handleDrawerClose()}>
+          <IconButton onClick={() => handleDrawerClose()}>
             {theme.direction === "rtl" ? (
               <ChevronRightIcon />
             ) : (
@@ -155,21 +168,51 @@ export default function Logado({handleDrawerOpen, handleDrawerClose, open}:props
             )}
           </IconButton>
         </div>
-        
 
         <Container>
           <List>
-            <button onClick={() => navigate("/Dashboard")}>
-              <img src={editarImg} alt="editar" />
-              <h2>Avaliação</h2>
-             
+            <button onClick={() => navigate("/dashboard")}>
+            {/* <img src={editarImg} alt="editar" /> */}
+            <div className="icon">
+                <MdOutlineDriveFileRenameOutline
+                  style={{
+                    color: "black",
+                    fontSize: "2.4rem",
+                    marginLeft:"0.7rem",
+                    marginRight:" 2.4rem",
+                  }}
+                />
+            </div>
+            <h2>Avaliação</h2>
             </button>
 
-            <button>
-            <FiAirplay style={{color: ' red', fontSize: '3rem'}}/>
-            </button>
-            <button>
-            <FiCornerUpLeft style={{color: ' red', fontSize: '3rem'}}/>
+            {/* <button>
+            <div className="icon">
+              <FiAirplay
+                style={{
+                  color: "black",
+                  fontSize: "2.4rem",
+                  marginLeft:"0.7rem",
+                  marginRight:" 2.4rem",
+                }}
+              />
+              
+            </div>
+            <h2>Avaliação</h2>
+            </button> */}
+
+            <button onClick={() => navigate("/")}>
+            <div className="icon">
+              <FiCornerUpLeft
+                style={{
+                  color: "black",
+                  fontSize: "2.4rem",
+                  marginLeft:"0.7rem",
+                  marginRight:" 2.4rem",
+                }}
+              />
+               </div>
+               <h2>Voltar</h2>
             </button>
           </List>
         </Container>

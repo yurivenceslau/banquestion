@@ -14,34 +14,30 @@ import { GlobalStyle } from "./styles/global";
 // }
 
 export function App() {
+  const [login,setLogin]= useState(true);
+  
 
-  const [open,setOpen] = useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  
 
   return (
     <Router>
-      <div style={{marginLeft: open? '14rem' : '4rem', transition:'0.4s'}}>
+      {/* <div style={{marginLeft: open? '14rem' : '4rem', transition:'0.4s'}}> */}
         <MainRoutes/>
-      </div>
-      {/* <Comocentralizar/> */}
-<<<<<<< HEAD
-      {/* <Login/> */}
-      <Logado 
+      {/* </div> */}
+      {/* <Comocentralizar/>
+        <div style={{marginLeft: login? '-4rem' : '0rem',}}>
+        <Login />
+         </div>
+      */}
+      
+        
+      {/* <Logado 
         handleDrawerClose={()=>handleDrawerClose()} 
         handleDrawerOpen={()=>handleDrawerOpen()}
         open={open}
-      />
-=======
-      <Login/>
-      {/* <Logado/> */}
->>>>>>> b191497e8917d6c9608bf6a0052bfdae3fa300a7
+      /> */}
+      
+      
       <GlobalStyle/>
       </Router>
   );
