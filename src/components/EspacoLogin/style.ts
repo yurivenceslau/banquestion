@@ -11,25 +11,29 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin: auto;
-    /* min-height: 61.5vh; */
     
     img{
         margin-bottom: 2rem;
         width: 21rem;
-        height: 4rem;
+        min-height: 4rem;
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 675px) {
         display: flex;
         flex-direction: column;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
+
+        img{    
+            width:90%;
+            height: auto;
+        }
     }
 `
 export const Content = styled.form`
     /* background-color: #1A6462; */
     border-radius: 0.5rem;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
     max-width: 430px;
     width: 100%;
     min-height: 400px;
@@ -70,6 +74,22 @@ export const Content = styled.form`
         font-weight: 510;
     }
 
+    @media screen and (max-width: 675px) {
+        width: 100%;
+       box-shadow: 0px 0px 0px transparent;
+
+       input{
+           width: 90%;
+           font-size: 1.2rem;
+           height: 3rem;
+       }
+
+        button{
+            font-size: 1rem;
+            height: 3.5rem;
+        }
+    }
+
 
 `
 
@@ -87,7 +107,11 @@ export const Info = styled.h1`
         margin-top: -1rem;
         color: #1A6462;
     }
-
+    @media screen and (max-width: 675px) {
+        span{
+            font-size: 1.2rem;
+        }
+    }
 
 `
 export const Contatos = styled.div`
@@ -104,10 +128,11 @@ export const Contatos = styled.div`
     strong{
         font-weight: 550;
         margin-top: 1.5rem;
+        font-size: 1rem;
     }
     a{
         color: #1A6462;
-
+        font-size: 0.9rem;
     }
 
 `

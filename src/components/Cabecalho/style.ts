@@ -16,11 +16,10 @@ export const Container = styled.div`
     background-size: cover;
     color: white;
 
-    @media screen and (max-width: 800px) {
-        display: flex;
-        flex-direction: column;
+    @media screen and (max-width: 675px) {
+        display: none;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
     } 
 
     
@@ -32,16 +31,15 @@ export const Corzinha = styled.div`
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to bottom right, #1A6462, transparent);
-    min-height: 100vh;
+    height: 100%;
     width: 100%;
     flex-direction: column;
     text-shadow: 0px 0px 20px rgba(12,12,14,20);
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 675px) {
         display: flex;
-        flex-direction: column;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
     }
     
     h1{
