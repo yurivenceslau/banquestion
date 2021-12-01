@@ -41,7 +41,7 @@ export function EspacoLogin(){
                 <input type="password" name="password" onChange={handleChange} placeholder="Senha" />
                 <button type="submit">ACESSAR</button>
                 <Contatos>
-                    <strong>Nao conseguiu acessar seu Portal?</strong>
+                    <strong>Nao conseguiu acessar sua conta?</strong>
                     <a href="">Entre em contato conosco!</a>
                 </Contatos>
             </Content>
