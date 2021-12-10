@@ -1,20 +1,22 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import Logado from '../Logado';
 
 import { Container } from './styles';
 
+interface propsLogado {
+  open:boolean;
+  handleDrawerClose: ()=>{};
+  handleDrawerOpen: ()=>{};
+ }
 
-export function Perfil() {
+export function Perfil({open, handleDrawerClose, handleDrawerOpen}: propsLogado) {
+  
   return (
     <>
-    <Container>
-      
-      {/* <div style={{marginLeft: open? '4rem' : '0rem',transition:'0.3s',}}> */}
-        <Logado />
-         {/* </div> */}
-      
-      <h1>Perfil</h1>
-      
+    <Logado open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>
+    <Container isOpen={open}>
+      <h1>Perfil
+      </h1>
     </Container>
     </>
   );

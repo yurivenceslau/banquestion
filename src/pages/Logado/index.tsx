@@ -22,10 +22,24 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 
 import { useNavigate } from "react-router-dom";
+
+import  alanImg  from "../../imagens/logoAlan.png"
+import AlanImg from "../../imagens/alan-perfil.jpg"
 import { FiAirplay } from "react-icons/fi";
+import { AiFillProfile } from "react-icons/ai";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { BsArrowBarLeft } from "react-icons/bs";
+import { BsClipboard } from "react-icons/bs";
+import { BsDoorOpenFill } from "react-icons/bs";
+import { BsReplyFill } from "react-icons/bs";
+import { AiFillSetting } from "react-icons/ai";
+
+
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+
 import { FiCornerUpLeft } from "react-icons/fi";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
-//import { PromptProps } from "react-router-dom";
+import { OpenDirOptions } from "fs";
 
 const drawerWidth = 240;
 
@@ -50,7 +64,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       marginRight: 36,
-      // backgroundColor: 'red !important',
     },
     hide: {
       display: "none",
@@ -62,7 +75,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     drawerOpen: {
       width: drawerWidth,
-      backgroundColor: "#E6E6E8",
+      backgroundColor: "whitesmoke",
       boxShadow: "3px 5px 5px #aaaaaa",
       transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
@@ -75,7 +88,7 @@ const useStyles = makeStyles((theme: Theme) =>
         duration: theme.transitions.duration.leavingScreen,
       }),
       overflowX: "hidden",
-      backgroundColor: "#E6E6E8",
+      backgroundColor: "whitesmoke",
       // boxShadow:"(0,0,0,0.9)",
       // boxShadow: "3px 3px gray, -1em 0 0.4em olive",
       boxShadow: "3px 5px 5px #aaaaaa",
@@ -86,7 +99,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     toolbar: {
       display: "flex",
-      backgroundColor: "#E6E6E8",
+      backgroundColor: "whitesmoke",
       alignItems: "center",
       justifyContent: "flex-end",
       padding: theme.spacing(0, 1),
@@ -101,50 +114,66 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-// interface propsLogado {
-//   handleDrawerOpen: () => void;
-//   handleDrawerClose: () => void;
-//   open: boolean;
-// }
-export default function Logado() {
+interface propsLogado {
+  open: boolean;
+  handleDrawerClose: () => {};
+  handleDrawerOpen: () => {};
+}
+
+export default function Logado({
+  open,
+  handleDrawerClose,
+  handleDrawerOpen,
+}: propsLogado) {
   const navigate = useNavigate();
   const classes = useStyles();
   const theme = useTheme();
-
-  const [open,setOpen] = useState(false);
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
 
   return (
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
+        // style={{background:"linear-gradient(to right,#8bbbb9,#1A6462,#1A6462)"}}
+      // body {background: linear-gradient(to right,skyblue,dodgerblue);}
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => handleDrawerOpen()}
-            edge="start"
-            className={clsx(classes.menuButton, {
-              [classes.hide]: open,
-            })}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            ALAN
-          </Typography>
-        </Toolbar>
+        <Content isOpen={open}>
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={() => handleDrawerOpen()}
+              edge="start"
+              className={clsx(classes.menuButton, {
+                [classes.hide]: open,
+              })}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap style={
+              {display:"flex", flexDirection:"row",alignItems:"center",justifyContent:"space-between",height:"3rem"}}>
+              <div className="logo-topo">
+              <img src={alanImg} alt="logo alan" />
+              </div>
+
+              
+            </Typography>
+           
+          </Toolbar>
+          <div className="usuario-topo">
+              <div className="div_spans">
+              <span className="div_span-1">Delair Cavalcante Andrade</span>
+              <span className="div_span-2">Delay@agil.com</span>
+              {/* style={{fontSize:"1rem"}} */}
+              </div>
+              <div className="perfil">
+               <img src={AlanImg} alt="imagem-de-perfil" />
+              </div>
+              </div>
+        </Content>
       </AppBar>
       <Drawer
         variant="permanent"
@@ -170,56 +199,76 @@ export default function Logado() {
         </div>
 
         <Container>
-          <List>
-            <button onClick={() => navigate("/dashboard")}>
-            {/* <img src={editarImg} alt="editar" /> */}
-            <div className="icon">
-                <MdOutlineDriveFileRenameOutline
+          <List style={{display:"flex",justifyContent:"space-between",flexDirection:"column"}}>
+            <div className="botoes-topo-nav">
+            <button onClick={() => navigate("/")}>
+              {/* <img src={editarImg} alt="editar" /> */}
+              <div className="icon">
+                <AiFillProfile
                   style={{
-                    color: "black",
+                    color: "#0b2c2b",
                     fontSize: "2.4rem",
-                    marginLeft:"0.7rem",
-                    marginRight:" 2.4rem",
+                    marginLeft: "0.7rem",
+                    marginRight: " 2.4rem",
                   }}
                 />
-            </div>
-            <h2>Avaliação</h2>
+              </div>
+              <h2>Avaliação</h2>
             </button>
 
-            {/* <button>
-            <div className="icon">
-              <FiAirplay
-                style={{
-                  color: "black",
-                  fontSize: "2.4rem",
-                  marginLeft:"0.7rem",
-                  marginRight:" 2.4rem",
-                }}
-              />
-              
-            </div>
-            <h2>Avaliação</h2>
-            </button> */}
-
-            <button onClick={() => navigate("/")}>
-            <div className="icon">
-              <FiCornerUpLeft
-                style={{
-                  color: "black",
-                  fontSize: "2.4rem",
-                  marginLeft:"0.7rem",
-                  marginRight:" 2.4rem",
-                }}
-              />
-               </div>
-               <h2>Voltar</h2>
+            <button onClick={() => navigate("/perfil")}>
+              {/* <img src={editarImg} alt="editar" /> */}
+              <div className="icon">
+                <BsReplyFill
+                  style={{
+                    color: "#0b2c2b",
+                    fontSize: "2.4rem",
+                    marginLeft: "0.7rem",
+                    marginRight: " 2.4rem",
+                  }}
+                />
+              </div>
+              <h2>Voltar</h2>
             </button>
+
+            <button onClick={() => navigate("/perfil")}>
+              {/* <img src={editarImg} alt="editar" /> */}
+              <div className="icon">
+                <AiFillSetting
+                  style={{
+                    color: "#0b2c2b",
+                    fontSize: "2.4rem",
+                    marginLeft: "0.7rem",
+                    marginRight: " 2.4rem",
+                  }}
+                />
+              </div>
+              <h2>Configurações</h2>
+            </button>
+            </div>
+
+            
+
           </List>
+          <div className="botoa-sair-nav">
+            <button onClick={() => navigate("/")}>
+              <div className="icon">
+                <BsArrowBarLeft
+                  style={{
+                    color: "#0b2c2b",
+                    fontSize: "2.4rem",
+                    marginLeft: "0.7rem",
+                    marginRight: " 2.4rem",
+                  }}
+                />
+              </div>
+              <h2>Sair</h2>
+            </button>
+            </div>
         </Container>
       </Drawer>
       {/* <main className={classes.content}>
         <div className={classes.toolbar} />
-       
       </main> */}
     </div>
   );
