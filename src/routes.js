@@ -4,6 +4,7 @@ import React, {useState} from "react"
 import { Dashboard } from "./pages/Dashboard/index";
 import { Perfil } from "./pages/Perfil";
 import { Login } from "./pages/Login";
+import { Contato } from "./pages/Contato";
 
 export function MainRoutes(){
      const [open,setOpen] = useState(false);
@@ -20,6 +21,7 @@ export function MainRoutes(){
          <Routes>
               {/* <Route path="/" element={<Login/>}/> */}
               <Route path="/login" element={<Login/>}/>
+              <Route path="/contato" element={<Contato/>}/>
               
               <Route path="/perfil" element={<Perfil open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>
               <Route path="/" element={<Dashboard open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>

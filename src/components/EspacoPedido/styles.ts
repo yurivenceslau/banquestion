@@ -30,29 +30,42 @@ export const Container = styled.div`
         }
     }
 `
-export const Content = styled.form`
+export const Content = styled.div`
     /* background-color: #1A6462; */
     border-radius: 0.5rem;
     box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
-    max-width: 430px;
+    max-width: 43rem;
     width: 100%;
-    min-height: 400px;
+    min-height: 37rem;
     display: flex;
     /* background-color: #f5f5f5; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    .MuiOutlinedInput-multiline{
+        background-color: #e2e2e2;
+        width: 37.9rem;
+        margin:auto;
+        textarea{
+            margin: auto;
+            align-self: center;
+        }
+    }
+    .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-fullWidth.MuiInputBase-formControl{
+        width: 37.9rem;
+    }
+    span{
+        color: black;
+        margin-bottom: 1rem;
+    }
     input{
         background-color: #e2e2e2;
         border: 0;
-        width: 21rem;
+        height: 1rem;
+        width: 19rem;
         border-radius: 0.25rem;
-
-        &:first-child{
-            width: 93%;
-        }
     }
-    .botao_acessar{
+    button{
         background-color: white;
         border: 0;
         border-radius: 25rem;
@@ -75,27 +88,58 @@ export const Content = styled.form`
         font-weight: 510;
     }
 
+    .comps{
+        width: 100%;
+    }
+    .comp{
+        width: 100%;
+    }
+
+
     @media screen and (max-width: 675px) {
         width: 100%;
        box-shadow: 0px 0px 0px transparent;
 
        input{
-           width: 90%;
+           /* min-width: 90%; */
+           flex: 1;
            font-size: 1.2rem;
            height: 1.8rem;
        }
 
        label{
            font-size: 1.3rem;
-           margin-top: 0.1rem;
        }
 
-        button{
-            font-size: 1rem;
-            height: 3.5rem;
+       button{
+           font-size: 1rem;
+           height: 3.5rem;
+       }
+       .comps{
+           width: auto;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
         }
-        .botao_acessar{
-            height: 4rem;
+        .comp{
+            width: auto;
+            margin: auto;
+        }
+       .makeStyles-root-12{
+           margin-left: 10rem;
+       }
+       .MuiOutlinedInput-multiline{
+            width: 100%;
+            height: 4.2rem;
+        }
+        .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-fullWidth.MuiInputBase-formControl{
+            width: 100%;
+            height: 4.2rem;
+        }
+        .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input{
+            height: 1.8rem;
+            display: flex;
+            align-items: center;
         }
         .MuiInputLabel-outlined.MuiInputLabel-shrink{
             transform: translate(14px, -6px) scale(0.6)
@@ -147,4 +191,14 @@ export const Contatos = styled.div`
         font-size: 0.9rem;
     }
 
+`
+export const Alinhador = styled.div`
+    display: flex;
+    flex-direction: row;
+
+    span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `
