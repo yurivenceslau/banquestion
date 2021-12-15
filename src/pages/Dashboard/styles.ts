@@ -13,10 +13,14 @@ export const Container = styled.main<propsContainer>`
   /* min-height: 100vh;
   width: 100%; */
   
-  min-height: 98vh;
+  min-height: 91vh;
   margin-top:4rem;
   justify-content: center;
   background-color: #F0E8F5;
+  @media screen and (max-width:675px){ 
+    margin-left: 0.75rem; 
+    margin-right: 0.75rem; 
+  }
 
   /* h1{
     background-color: crimson;

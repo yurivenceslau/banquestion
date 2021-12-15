@@ -1,7 +1,7 @@
 
 import Logado from "../Logado";
 import {Container} from "./styles";
-import {Caixa} from "../../components/Caixa";
+import {Questionario} from "../../components/Questionario";
 
 interface propsLogado {
   open:boolean;
@@ -14,7 +14,7 @@ export function Dashboard({open, handleDrawerClose, handleDrawerOpen}: propsLoga
     <>
       <Logado open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>
       <Container isOpen={open}>
-        <Caixa/>
+        <Questionario/>
       </Container>
     </>
   );

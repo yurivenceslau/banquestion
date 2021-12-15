@@ -1,4 +1,4 @@
-import { Container, Content } from "./styles";
+import { Nav, Content, Container } from "./styles";
 import editarImg from "../../imagens/pen-tool.svg";
 
 import React, { useState } from "react";
@@ -89,6 +89,8 @@ const useStyles = makeStyles((theme: Theme) =>
       }),
       overflowX: "hidden",
       backgroundColor: "whitesmoke",
+      
+      
       // boxShadow:"(0,0,0,0.9)",
       // boxShadow: "3px 3px gray, -1em 0 0.4em olive",
       boxShadow: "3px 5px 5px #aaaaaa",
@@ -130,7 +132,10 @@ export default function Logado({
   const theme = useTheme();
 
   return (
+    <Container isOpen={open}>
+      
     <div className={classes.root}>
+      
       <CssBaseline />
       <AppBar
         // style={{background:"linear-gradient(to right,#8bbbb9,#1A6462,#1A6462)"}}
@@ -142,6 +147,8 @@ export default function Logado({
       >
         <Content isOpen={open}>
           <Toolbar>
+          
+         
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -152,7 +159,9 @@ export default function Logado({
               })}
             >
               <MenuIcon />
+              
             </IconButton>
+            
             <Typography variant="h6" noWrap style={
               {display:"flex", flexDirection:"row",alignItems:"center",justifyContent:"space-between",height:"3rem"}}>
               <div className="logo-topo">
@@ -174,6 +183,7 @@ export default function Logado({
               </div>
               </div>
         </Content>
+        
       </AppBar>
       <Drawer
         variant="permanent"
@@ -197,12 +207,16 @@ export default function Logado({
             )}
           </IconButton>
         </div>
-
-        <Container>
-          <List style={{display:"flex",justifyContent:"space-between",flexDirection:"column"}}>
+        
+        <img className="alan-logo" src={alanImg} alt="logo alan"/>
+     
+        <Nav isOpen={open}>
+          
+          <List style={{display:"flex",justifyContent:"space-between" ,flexDirection:"column"}}>
             <div className="botoes-topo-nav">
             <button onClick={() => navigate("/")}>
               {/* <img src={editarImg} alt="editar" /> */}
+              
               <div className="icon">
                 <AiFillProfile
                   style={{
@@ -215,6 +229,21 @@ export default function Logado({
               </div>
               <h2>Avaliação</h2>
             </button>
+
+            <button onClick={() => navigate("/perfil")}>
+              <div className="icon">
+                <AiFillSetting
+                  style={{
+                    color: "#0b2c2b",
+                    fontSize: "2.4rem",
+                    marginLeft: "0.7rem",
+                    marginRight: " 2.4rem",
+                  }}
+                />
+              </div>
+              <h2>Configurações</h2>
+            </button>
+            </div>
 
             <button onClick={() => navigate("/perfil")}>
               {/* <img src={editarImg} alt="editar" /> */}
@@ -230,25 +259,7 @@ export default function Logado({
               </div>
               <h2>Voltar</h2>
             </button>
-
-            <button onClick={() => navigate("/perfil")}>
-              {/* <img src={editarImg} alt="editar" /> */}
-              <div className="icon">
-                <AiFillSetting
-                  style={{
-                    color: "#0b2c2b",
-                    fontSize: "2.4rem",
-                    marginLeft: "0.7rem",
-                    marginRight: " 2.4rem",
-                  }}
-                />
-              </div>
-              <h2>Configurações</h2>
-            </button>
-            </div>
-
             
-
           </List>
           <div className="botoa-sair-nav">
             <button onClick={() => navigate("/")}>
@@ -265,11 +276,14 @@ export default function Logado({
               <h2>Sair</h2>
             </button>
             </div>
-        </Container>
+        </Nav>
       </Drawer>
       {/* <main className={classes.content}>
         <div className={classes.toolbar} />
       </main> */}
     </div>
+    </Container>
   );
+
+  // ,backgroundColor:"red"
 }

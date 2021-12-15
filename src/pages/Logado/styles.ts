@@ -1,29 +1,46 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+interface propsNav{
+  isOpen: boolean;
+}
+export const Nav = styled.main<propsNav>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+
+ 
+
+  @media screen and (max-width: 675px) {
+    display: flex;
+    justify-content: initial;
+  }
+ 
+
   button {
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
     align-items: center;
     width: 100%;
     padding-left: 0.5rem;
-    /* background-color: white; */
     border: 0;
     background-color: whitesmoke;
-    /* box-shadow: rgba(0,0,0,0.9); */
     cursor: pointer;
-
+   
     transition: filter, 0.2s;
 
     :hover {
       filter: brightness(0.9);
     }
   }
+  .botoa-sair-nav{
+    @media screen and (max-width: 675px) {
+      background-color: red;
+      display: flex;
+      margin-top: 3rem;
+    }
+  }
+  
   img {
     display: flex;
     flex: 1;
@@ -38,6 +55,9 @@ export const Container = styled.main`
     margin-right: 5.7rem;
   }
 `;
+
+
+
 interface propsContent {
   isOpen: boolean;
 }
@@ -47,10 +67,13 @@ export const Content = styled.div<propsContent>`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 675px) {
+    display: ${(props) => (props.isOpen ? "none" : "")};
+    }
 
   .logo-topo {
-    height: 2.5rem;
-    width: 15.5rem;
+    /* min-height: 2.5rem;
+    width: 15.5rem; */
 
     img {
       display: flex;
@@ -58,6 +81,16 @@ export const Content = styled.div<propsContent>`
       height: 2.5rem;
       width: 100%;
     }
+  }
+  @media screen and (max-width: 675px) {
+    .logo-topo {
+      /* width: 0; */
+      display: none;
+    }
+    /* .sc-hZpJaK .hMKvHM{
+      background-color: blue;
+    } */
+    
   }
 
   .usuario-topo {
@@ -67,6 +100,8 @@ export const Content = styled.div<propsContent>`
     margin-right: 0.5rem;
     /* justify-content: space-around; */
     align-items: center;
+
+    
 
     .div_spans {
       display: flex;
@@ -114,4 +149,43 @@ export const Content = styled.div<propsContent>`
       }
     }
   }
+`;
+interface propsContainer {
+  isOpen: boolean;
+}
+export const Container = styled.div<propsContainer>`
+  display: block;
+
+  .alan-logo{
+  border-bottom: 1px solid rgb(118,118,118, .4);
+  padding:1rem;
+  display: ${(props) => (props.isOpen ? "none" : "none")};
+  @media screen and (max-width: 675px) {
+    display: block;
+  }
+}
+
+  .MuiDrawer-paper {
+    @media screen and (max-width: 675px) {
+      display: ${(props) => (props.isOpen ? "" : "none")};
+      width: ${(props) => (props.isOpen ? "100%" : "")};
+      position: fixed;
+      z-index: 1;
+      height: 100vh;
+      /* background-color: ${(props) => (props.isOpen ? "red" : "blue")};  */
+      /* margin-left:${(props) => (props.isOpen ? "0" : "2rem")}; */
+      /* background-color: transparent; */
+      /* background-color: red ; */
+
+      .makeStyles-toolbar-9{
+      z-index: 2;
+    }
+  }
+    .makeStyles-toolbar-9{
+      
+      /* position: fixed; */
+      border-bottom: 1px solid rgb(118,118,118, .4);
+     
+  }
+  
 `;
