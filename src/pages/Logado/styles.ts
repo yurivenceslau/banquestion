@@ -170,6 +170,7 @@ export const Container = styled.div<propsContainer>`
       display: ${(props) => (props.isOpen ? "" : "none")};
       width: ${(props) => (props.isOpen ? "100%" : "")};
       position: fixed;
+      overflow-y:${(props) => (props.isOpen ? "hidden" : "hidden")};
       z-index: 1;
       height: 100vh;
       /* background-color: ${(props) => (props.isOpen ? "red" : "blue")};  */
