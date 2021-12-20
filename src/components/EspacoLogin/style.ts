@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import logoAlan from "../../imagens/logoAlan.png"
 
+
+
 export const Container = styled.div`
     color: white;
     display: flex;
@@ -11,6 +13,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin: auto;
+    background-color: white;
     
     img{
         margin-bottom: 2rem;

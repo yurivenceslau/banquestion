@@ -20,11 +20,11 @@ export function MainRoutes(){
      return(
          <Routes>
               {/* <Route path="/" element={<Login/>}/> */}
-              <Route path="/login" element={<Login/>}/>
+              <Route path="/" element={<Login/>}/>
               <Route path="/contato" element={<Contato/>}/>
               
               <Route path="/perfil" element={<Perfil open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>
-              <Route path="/" element={<Dashboard open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>
+              <Route path="/dashboard" element={<Dashboard open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>
               {/* <Route path="/Perfil" element={<Perfil/>}/> */}
               <Route path="*" element={<h1>Not Found</h1>}/>
          </Routes>

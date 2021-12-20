@@ -65,15 +65,20 @@ export function EspacoPedido() {
 const classes = useStyles();
 const [currency, setCurrency] = React.useState('Pedido de Cadastro');
 const [value, setValue] = React.useState('');
-const pattern = '(99) 99999-9999'
+const pattern1 = '(99) 99999-9999';
+const pattern2 = '999-999999';
  
 
 const handleChange =(event: React.ChangeEvent<HTMLInputElement>)=>{
   if(event.target.name == "tel"){
     setLogin(
-      {...login, [event.target.name]: mask(event.target.value, pattern)}
+      {...login, [event.target.name]: mask(event.target.value, pattern1)}
   )
-  }else{
+  }else if(event.target.name == "cod"){
+    setLogin(
+      {...login, [event.target.name]: mask(event.target.value, pattern2)}
+    )
+  }else {
   setLogin(
         {...login, [event.target.name]: event.target.value}
     )
@@ -121,9 +126,9 @@ return(
                 <div className="comps">
                   <TextField required id="outlined-basic" name="email" type="email" onChange={handleChange} label="E-mail" variant="outlined" />
                   <TextField id="outlined-number" name="tel" onChange={handleChange} label="Number" value={login.tel} type="text" InputLabelProps={{shrink: true,}} variant="outlined" />
-                </div>
+            </div>
                 <div className = "comps">
-                  <TextField required id="outlined-basic" onChange={handleChange} name="cod" label="Cod. de Inscreção" variant="outlined" />
+                  <TextField required id="outlined-basic" value={login.cod} onChange={handleChange} name="cod" label="Cod. de Inscreção" variant="outlined" />
                   <TextField
                       required
                       id="outlined-select-currency"
@@ -145,6 +150,7 @@ return(
                       id="outlined-multiline-flexible down"
                       label="Descrição"
                       multiline
+                      fullWidth
                       maxRows={4}
                       value={value}
                       onChange={e => handleChangeTextarea(e)}
@@ -155,7 +161,7 @@ return(
               <button type="submit">ENVIAR</button>
             <Contatos>
                 <strong>Já conseguiu seu acesso?</strong>
-                <Link to = "/login">Entre no seu Portal!</Link>
+                <Link to = "/">Entre no seu Portal!</Link>
             </Contatos>
             </form>
         </Content>

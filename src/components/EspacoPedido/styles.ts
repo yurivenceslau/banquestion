@@ -7,10 +7,11 @@ export const Container = styled.div`
     flex: 2.5;
     min-height: 100vh;
     flex-direction: column;
-    width: 30rem;
+    width: 100%;
     align-items: center;
     justify-content: center;
     margin: auto;
+    background-color: white;
     
     img{
         margin-bottom: 2rem;
@@ -25,9 +26,12 @@ export const Container = styled.div`
         min-height: 100vh;
 
         img{    
-            width:90%;
+            width: 90%;
             height: auto;
         }
+    }
+    @media screen and (max-width: 300px) {
+        width: 19.1rem;
     }
 `
 export const Content = styled.div`
@@ -62,8 +66,15 @@ export const Content = styled.div`
         background-color: #e2e2e2;
         border: 0;
         height: 1rem;
-        width: 19rem;
+        max-width: 37.9rem;
+        width: 90%;
         border-radius: 0.25rem;
+    }
+    .MuiInputBase-input.MuiOutlinedInput-input{
+        width: 100%;
+    }
+    .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-fullWidth.MuiInputBase-formControl{
+        max-width: 37.9rem;
     }
     button{
         background-color: white;
@@ -95,14 +106,31 @@ export const Content = styled.div`
         width: 100%;
     }
 
+    @media screen and (max-width: 300px) {
+        button{
+            padding: 0;
+            width: 17.5rem;
+        }
+        .MuiOutlinedInput-root{
+            width: 18rem;
+        }
+        .MuiOutlinedInput-multiline{
+            margin: 0;
+        }
+        .MuiInputBase-input.MuiOutlinedInput-input{
+            width: 5rem;
+        }
+        .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-fullWidth.MuiInputBase-formControl{
+            max-width: 18rem;
+        }
+    }
 
-    @media screen and (max-width: 675px) {
-        width: 100%;
-       box-shadow: 0px 0px 0px transparent;
+    @media screen and (max-width: 995px) {
+        width: 20%;
+        box-shadow: 0px 0px 0px transparent;
 
        input{
-           /* min-width: 90%; */
-           flex: 1;
+           width: 50%;
            font-size: 1.2rem;
            height: 1.8rem;
        }
@@ -130,14 +158,14 @@ export const Content = styled.div`
        }
        .MuiOutlinedInput-multiline{
             width: 100%;
-            height: 4.2rem;
+            min-height: 4.2rem;
         }
         .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-fullWidth.MuiInputBase-formControl{
             width: 100%;
-            height: 4.2rem;
+            min-height: 4.2rem;
         }
         .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input{
-            height: 1.8rem;
+            min-height: 1.8rem;
             display: flex;
             align-items: center;
         }
@@ -189,6 +217,9 @@ export const Contatos = styled.div`
     a{
         color: #1A6462;
         font-size: 0.9rem;
+    }
+    @media screen and (max-width: 300px) {
+        width: 18rem;
     }
 
 `

@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         
     }
     html{
+        width: 100%;
         height: 100vh;
         /* background-color: #369A99; */
         background-color: #F0E8F5;

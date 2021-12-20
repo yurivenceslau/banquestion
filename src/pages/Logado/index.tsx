@@ -214,7 +214,7 @@ export default function Logado({
           
           <List style={{display:"flex",justifyContent:"space-between" ,flexDirection:"column"}}>
             <div className="botoes-topo-nav">
-            <button onClick={() => navigate("/")}>
+            <button onClick={() => navigate("/dashboard")}>
               {/* <img src={editarImg} alt="editar" /> */}
               
               <div className="icon">

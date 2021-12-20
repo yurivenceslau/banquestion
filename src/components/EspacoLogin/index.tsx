@@ -16,6 +16,7 @@ import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Statement } from "typescript";
+import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -48,6 +49,7 @@ interface State {
 
 export function EspacoLogin(){
     const classes = useStyles();
+    const navigate = useNavigate();
     const [login, setLogin] = React.useState<State>({
         user:"",
         password: "",
@@ -65,9 +67,16 @@ export function EspacoLogin(){
         // console.log(login)
     }, [login])
 
+    const valid = () => {
+    if(login.user !== "" && login.password !== ""){
+      navigate("/dashboard")
+    }}
+
     const handleSubmit = (event: any) => {
         event.preventDefault()
-        console.log(login)
+        if(login.user !== "" && login.password !== ""){
+          console.log(login)
+        }
     }
     const handleClickShowPassword = () => {
         setLogin({ ...login, showPassword: !login.showPassword });
@@ -109,7 +118,10 @@ export function EspacoLogin(){
             labelWidth={70}
           />
         </FormControl>
-                    <button className="botao_acessar" type="submit">ACESSAR</button>
+                    <button onClick =
+                    {valid}
+                    className="botao_acessar"
+                    type="submit">ACESSAR</button>
                 </div>
                 <Contatos>
                     <strong>Nao conseguiu acessar sua conta?</strong>
