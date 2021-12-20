@@ -20,6 +20,9 @@ export const Container = styled.main<propsContainer>`
   @media screen and (max-width:675px){ 
     margin-left: 0.75rem; 
     margin-right: 0.75rem; 
+    
+    height:${(props) => (props.isOpen ? "1rem" : "")};
+    overflow-y:${(props) => (props.isOpen ? "hidden" : "")};
   }
 
   /* h1{
