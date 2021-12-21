@@ -219,7 +219,7 @@ export default function Logado({
           <List style={{display:"flex",justifyContent:"space-between" ,flexDirection:"column"}}>
             <img className="alan-logo" src={alanImg} alt="logo alan"/>
             <div className="botoes-topo-nav">
-            <button onClick={()=>{navigate("/"); handleDrawerClose()}} >
+            <button onClick={() => navigate("/avaliacao")}>
               {/* <img src={editarImg} alt="editar" /> */}
               
               <div className="icon">
@@ -253,7 +253,7 @@ export default function Logado({
             
           </List>
           <div className="botoa-sair-nav">
-            <button onClick={() => {navigate("/login"); handleDrawerClose()}}>
+            <button onClick={() => {navigate("/"); handleDrawerClose()}}>
               <div className="icon">
                 <BsArrowBarLeft/>
               </div>
@@ -268,6 +268,4 @@ export default function Logado({
     </div>
     </Container>
   );
-
-  // ,backgroundColor:"red"
 }

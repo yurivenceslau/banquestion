@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import logoAlan from "../../imagens/logoAlan.png"
 
+
+
 export const Container = styled.div`
     color: white;
     display: flex;
@@ -11,6 +13,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     margin: auto;
+    background-color: white;
     
     img{
         margin-bottom: 2rem;
@@ -28,6 +31,9 @@ export const Container = styled.div`
             width:90%;
             height: auto;
         }
+    }
+    @media screen and (max-width: 300px) {
+        width: 19.6rem;
     }
 `
 export const Content = styled.form`
@@ -101,7 +107,7 @@ export const Content = styled.form`
             transform: translate(14px, -6px) scale(0.6)
         }
     }
-
+    
 
 `
 

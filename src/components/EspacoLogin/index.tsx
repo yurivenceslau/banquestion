@@ -16,6 +16,8 @@ import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Statement } from "typescript";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -48,6 +50,7 @@ interface State {
 
 export function EspacoLogin(){
     const classes = useStyles();
+    const navigate = useNavigate();
     const [login, setLogin] = React.useState<State>({
         user:"",
         password: "",
@@ -67,7 +70,14 @@ export function EspacoLogin(){
 
     const handleSubmit = (event: any) => {
         event.preventDefault()
-        console.log(login)
+        if(login.user === ""){
+          toast.error("Login obrigatório!")
+        }else if(login.password === ""){
+          toast.error("Senha obrigatória!")
+        }else{
+          console.log(login)
+          navigate("/avaliacao")
+        }
     }
     const handleClickShowPassword = () => {
         setLogin({ ...login, showPassword: !login.showPassword });
@@ -85,7 +95,7 @@ export function EspacoLogin(){
                     <span>Faça login para acessar</span>
                 </Info>
                 <div className={classes.root}>
-        <TextField required id="outlined-required" label="Login" variant="outlined" onChange={handleChange('user')} style={{width: "18.7rem"}} />
+        <TextField id="outlined-basic" label="Login *" variant="outlined" onChange={handleChange('user')} style={{width: "18.7rem"}} />
 
         <FormControl style={{width: "18.7rem"}} className={clsx(classes.margin, classes.textField)} variant="outlined">
           <InputLabel required htmlFor="outlined-adornment-password">Senha</InputLabel>
@@ -109,7 +119,9 @@ export function EspacoLogin(){
             labelWidth={70}
           />
         </FormControl>
-                    <button className="botao_acessar" type="submit">ACESSAR</button>
+                    <button
+                    className="botao_acessar"
+                    type="submit">ACESSAR</button>
                 </div>
                 <Contatos>
                     <strong>Nao conseguiu acessar sua conta?</strong>
