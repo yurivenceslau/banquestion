@@ -25,6 +25,8 @@ import { useNavigate } from "react-router-dom";
 
 import  alanImg  from "../../imagens/logoAlan.png"
 import AlanImg from "../../imagens/alan-perfil.jpg"
+import LogoBrancaImg from "../../imagens/LogoBranca.png"
+
 import { FiAirplay } from "react-icons/fi";
 import { AiFillProfile } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -33,13 +35,14 @@ import { BsClipboard } from "react-icons/bs";
 import { BsDoorOpenFill } from "react-icons/bs";
 import { BsReplyFill } from "react-icons/bs";
 import { AiFillSetting } from "react-icons/ai";
-
+import {BsFillPersonFill} from "react-icons/bs";
 
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 import { FiCornerUpLeft } from "react-icons/fi";
 import { MdOutlineDriveFileRenameOutline } from "react-icons/md";
 import { OpenDirOptions } from "fs";
+import { Style } from "@material-ui/icons";
 
 const drawerWidth = 240;
 
@@ -130,9 +133,10 @@ export default function Logado({
   const navigate = useNavigate();
   const classes = useStyles();
   const theme = useTheme();
-
+  
   return (
     <Container isOpen={open}>
+      
       
     <div className={classes.root}>
       
@@ -149,7 +153,7 @@ export default function Logado({
           <Toolbar>
           
          
-            <IconButton
+            <IconButton style={{ marginRight:'0.8rem',marginLeft:'-0.6rem'}}
               color="inherit"
               aria-label="open drawer"
               onClick={() => handleDrawerOpen()}
@@ -165,7 +169,7 @@ export default function Logado({
             <Typography variant="h6" noWrap style={
               {display:"flex", flexDirection:"row",alignItems:"center",justifyContent:"space-between",height:"3rem"}}>
               <div className="logo-topo">
-              <img src={alanImg} alt="logo alan" />
+              <img src={LogoBrancaImg} alt="logo alan" />
               </div>
 
               
@@ -186,6 +190,7 @@ export default function Logado({
         
       </AppBar>
       <Drawer
+        
         variant="permanent"
         className={clsx(classes.drawer, {
           [classes.drawerOpen]: open,
@@ -208,70 +213,49 @@ export default function Logado({
           </IconButton>
         </div>
         
-        <img className="alan-logo" src={alanImg} alt="logo alan"/>
-     
+      
         <Nav isOpen={open}>
-          
+        
           <List style={{display:"flex",justifyContent:"space-between" ,flexDirection:"column"}}>
+            <img className="alan-logo" src={alanImg} alt="logo alan"/>
             <div className="botoes-topo-nav">
-            <button onClick={() => navigate("/")}>
+            <button onClick={()=>{navigate("/"); handleDrawerClose()}} >
               {/* <img src={editarImg} alt="editar" /> */}
               
               <div className="icon">
-                <AiFillProfile
-                  style={{
-                    color: "#0b2c2b",
-                    fontSize: "2.4rem",
-                    marginLeft: "0.7rem",
-                    marginRight: " 2.4rem",
-                  }}
-                />
+                <AiFillProfile/>
               </div>
               <h2>Avaliação</h2>
             </button>
 
-            <button onClick={() => navigate("/perfil")}>
+            <button onClick={() => {navigate("/perfil"); handleDrawerClose()}}>
               <div className="icon">
-                <AiFillSetting
-                  style={{
-                    color: "#0b2c2b",
-                    fontSize: "2.4rem",
-                    marginLeft: "0.7rem",
-                    marginRight: " 2.4rem",
-                  }}
-                />
+                <BsFillPersonFill/>
+              </div>
+              <h2>Perfil</h2>
+            </button>
+
+            <button onClick={() => {navigate("/perfil"); handleDrawerClose()}}>
+              <div className="icon">
+                <AiFillSetting/>
               </div>
               <h2>Configurações</h2>
             </button>
             </div>
 
-            <button onClick={() => navigate("/perfil")}>
-              {/* <img src={editarImg} alt="editar" /> */}
+            {/* <button onClick={() => {navigate("/perfil"); handleDrawerClose()}}>
+              <img src={editarImg} alt="editar" />
               <div className="icon">
-                <BsReplyFill
-                  style={{
-                    color: "#0b2c2b",
-                    fontSize: "2.4rem",
-                    marginLeft: "0.7rem",
-                    marginRight: " 2.4rem",
-                  }}
-                />
+                <BsReplyFill/>
               </div>
               <h2>Voltar</h2>
-            </button>
+            </button> */}
             
           </List>
           <div className="botoa-sair-nav">
-            <button onClick={() => navigate("/")}>
+            <button onClick={() => {navigate("/login"); handleDrawerClose()}}>
               <div className="icon">
-                <BsArrowBarLeft
-                  style={{
-                    color: "#0b2c2b",
-                    fontSize: "2.4rem",
-                    marginLeft: "0.7rem",
-                    marginRight: " 2.4rem",
-                  }}
-                />
+                <BsArrowBarLeft/>
               </div>
               <h2>Sair</h2>
             </button>

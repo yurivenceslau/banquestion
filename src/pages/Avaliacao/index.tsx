@@ -9,7 +9,7 @@ interface propsLogado {
   handleDrawerOpen: ()=>{};
  }
 
-export function Dashboard({open, handleDrawerClose, handleDrawerOpen}: propsLogado) {
+export function Avaliacao({open, handleDrawerClose, handleDrawerOpen}: propsLogado) {
   return (
     <>
       <Logado open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>

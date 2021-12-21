@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 
 
-export function Titulo() {
+export function TituloAvaliacao() {
   return (
     <Container>
       <div className="titulo">

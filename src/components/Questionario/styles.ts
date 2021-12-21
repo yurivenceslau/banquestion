@@ -11,7 +11,7 @@ export const Container = styled.div`
   height: 100%;
   /* background-color: violet; */
   border-radius: 0.5rem;
-  box-shadow: 3px 3px 16px 6px #aaaaaa;
+  box-shadow: 3px 3px 16px 4px #aaaaaa;
 
   @media screen and (max-width:675px){
     width: 100%; 

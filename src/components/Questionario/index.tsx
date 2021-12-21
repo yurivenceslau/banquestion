@@ -1,11 +1,11 @@
 import { Perguntas } from "../Perguntas";
-import { Titulo } from "../Titulo";
+import { TituloAvaliacao } from "../TituloAvaliacao";
 import { Container } from "./styles";
 
 export function Questionario() {
   return (
     <Container>
-      <Titulo />
+      <TituloAvaliacao/>
       <Perguntas />
     </Container>
   );

@@ -1,4 +1,5 @@
 import { ReactNode, useState } from 'react';
+import { Informacoes } from '../../components/Informacoes';
 import Logado from '../Logado';
 
 import { Container } from './styles';
@@ -15,8 +16,7 @@ export function Perfil({open, handleDrawerClose, handleDrawerOpen}: propsLogado)
     <>
     <Logado open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>
     <Container isOpen={open}>
-      <h1>Perfil
-      </h1>
+      <Informacoes/>
     </Container>
     </>
   );

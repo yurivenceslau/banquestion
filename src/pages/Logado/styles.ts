@@ -1,21 +1,35 @@
 import styled from "styled-components";
 
-interface propsNav{
+interface propsNav {
   isOpen: boolean;
 }
 export const Nav = styled.main<propsNav>`
   display: flex;
   flex-direction: column;
+  
   justify-content: space-between;
   height: 100%;
-
- 
 
   @media screen and (max-width: 675px) {
     display: flex;
     justify-content: initial;
   }
- 
+
+  @media screen and (max-height: 375px) {
+    display: flex;
+    overflow-y:${(props) => (props.isOpen ? "scroll" : "")};
+    
+    
+    .alan-logo{
+      /* padding-left:3rem; */
+      margin: 0;
+      width: 100%;
+      align-self: center
+   }
+
+  
+}
+  
 
   button {
     display: flex;
@@ -26,21 +40,41 @@ export const Nav = styled.main<propsNav>`
     border: 0;
     background-color: whitesmoke;
     cursor: pointer;
-   
+
     transition: filter, 0.2s;
 
     :hover {
       filter: brightness(0.9);
     }
   }
-  .botoa-sair-nav{
+
+  .icon {
+    display: flex;
+    justify-content: space-between;
+    color: #0b2c2b;
+    font-size: 2.4rem;
+
+    margin-left: 0.7rem;
+    margin-right: 2.4rem;
+  }
+
+  .botoes-topo-nav {
+    /* display: flex; */
+    /* flex-direction: column; */
+    @media screen and (max-width: 675) {
+      margin-top: 5rem;
+      background-color: red;
+    }
+  }
+
+  .botoa-sair-nav {
     @media screen and (max-width: 675px) {
       background-color: red;
       display: flex;
       margin-top: 3rem;
     }
   }
-  
+
   img {
     display: flex;
     flex: 1;
@@ -56,8 +90,6 @@ export const Nav = styled.main<propsNav>`
   }
 `;
 
-
-
 interface propsContent {
   isOpen: boolean;
 }
@@ -69,7 +101,7 @@ export const Content = styled.div<propsContent>`
   align-items: center;
   @media screen and (max-width: 675px) {
     display: ${(props) => (props.isOpen ? "none" : "")};
-    }
+  }
 
   .logo-topo {
     /* min-height: 2.5rem;
@@ -78,7 +110,7 @@ export const Content = styled.div<propsContent>`
     img {
       display: flex;
       justify-content: center;
-      height: 2.5rem;
+      height: 5rem;
       width: 100%;
     }
   }
@@ -90,7 +122,6 @@ export const Content = styled.div<propsContent>`
     /* .sc-hZpJaK .hMKvHM{
       background-color: blue;
     } */
-    
   }
 
   .usuario-topo {
@@ -100,8 +131,6 @@ export const Content = styled.div<propsContent>`
     margin-right: 0.5rem;
     /* justify-content: space-around; */
     align-items: center;
-
-    
 
     .div_spans {
       display: flex;
@@ -159,9 +188,20 @@ export const Container = styled.div<propsContainer>`
   .alan-logo{
   border-bottom: 1px solid rgb(118,118,118, .4);
   padding:1rem;
+  margin: 0;
+  width: 100%;
   display: ${(props) => (props.isOpen ? "none" : "none")};
   @media screen and (max-width: 675px) {
     display: block;
+  }
+  /* @media screen and (max-height: 360px) {
+    .alan-logo{
+      padding-left:3rem ;
+      width: 100%;
+      height: 4rem;
+      background-color: blue;
+   } */
+
   }
 }
 
