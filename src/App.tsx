@@ -2,6 +2,8 @@ import React,{useState} from 'react';
 // paginas privadas 
 import  Logado  from "./pages/Logado";
 import Comocentralizar from "./pages/Comocentralizar";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // paginas publicas
 import { Login } from "./pages/Login";
@@ -20,7 +22,19 @@ export function App() {
   
 
   return (
-    <Router>
+    <>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <Router>
       {/* <div style={{marginLeft: open? '14rem' : '4rem', transition:'0.4s'}}> */}
         <MainRoutes/>
       {/* </div> */}
@@ -29,7 +43,6 @@ export function App() {
         <Login />
          </div>
       */}
-      
         
       {/* <Logado 
         handleDrawerClose={()=>handleDrawerClose()} 
@@ -38,7 +51,9 @@ export function App() {
       /> */}
       
       
-      <GlobalStyle/>
+        <GlobalStyle/>
       </Router>
+    </>
+    
   );
 }

@@ -17,6 +17,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Statement } from "typescript";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -67,15 +68,15 @@ export function EspacoLogin(){
         // console.log(login)
     }, [login])
 
-    const valid = () => {
-    if(login.user !== "" && login.password !== ""){
-      navigate("/dashboard")
-    }}
-
     const handleSubmit = (event: any) => {
         event.preventDefault()
-        if(login.user !== "" && login.password !== ""){
+        if(login.user === ""){
+          toast.error("Login obrigatório!")
+        }else if(login.password === ""){
+          toast.error("Senha obrigatória!")
+        }else{
           console.log(login)
+          navigate("/dashboard")
         }
     }
     const handleClickShowPassword = () => {
@@ -94,7 +95,7 @@ export function EspacoLogin(){
                     <span>Faça login para acessar</span>
                 </Info>
                 <div className={classes.root}>
-        <TextField required id="outlined-required" label="Login" variant="outlined" onChange={handleChange('user')} style={{width: "18.7rem"}} />
+        <TextField id="outlined-basic" label="Login *" variant="outlined" onChange={handleChange('user')} style={{width: "18.7rem"}} />
 
         <FormControl style={{width: "18.7rem"}} className={clsx(classes.margin, classes.textField)} variant="outlined">
           <InputLabel required htmlFor="outlined-adornment-password">Senha</InputLabel>
@@ -118,8 +119,7 @@ export function EspacoLogin(){
             labelWidth={70}
           />
         </FormControl>
-                    <button onClick =
-                    {valid}
+                    <button
                     className="botao_acessar"
                     type="submit">ACESSAR</button>
                 </div>

@@ -32,6 +32,9 @@ export const Container = styled.div`
             height: auto;
         }
     }
+    @media screen and (max-width: 300px) {
+        width: 19.6rem;
+    }
 `
 export const Content = styled.form`
     /* background-color: #1A6462; */
@@ -104,7 +107,7 @@ export const Content = styled.form`
             transform: translate(14px, -6px) scale(0.6)
         }
     }
-
+    
 
 `
 

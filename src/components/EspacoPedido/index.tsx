@@ -5,9 +5,11 @@ import { Link } from "react-router-dom"
 import TextField from '@material-ui/core/TextField';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
+import { useNavigate } from "react-router-dom";
 //@ts-ignore
 import { mask } from 'remask';
-import { useForm, Controller } from "react-hook-form";
+import { toast } from 'react-toastify';
+
 
 const currencies = [
     {
@@ -63,6 +65,7 @@ export function EspacoPedido() {
     cod:"",
 })
 const classes = useStyles();
+const navigate = useNavigate();
 const [currency, setCurrency] = React.useState('Pedido de Cadastro');
 const [value, setValue] = React.useState('');
 const pattern1 = '(99) 99999-9999';
@@ -99,23 +102,56 @@ interface State {
   cod: string;
 }
 
+// const alertNome = () => toast.error("Nome Obrigatório");
+
 useEffect(()=>{
     // console.log(login)
 }, [login])
 
 const handleSubmit = (event: any) => {
     event.preventDefault()
-    console.log(login)
-    console.log(currency)
-    console.log(value)
-    
+    if(login.name === ""){
+      toast.error("Nome Obrigatório!");
+    }else if(login.email === ""){
+      toast.error("Email Obrigatório!");
+    }else if(login.tel !== ""){
+      if(login.tel.length < 15){
+        toast.error("Numero inválido!");
+      }else{
+        if(login.cod.length < 10){
+          if(login.cod === ""){
+            toast.error("Código de Inscrição obrigatório!");
+          }else{
+            toast.error("Código de Inscrição inválido!");
+          }
+        }else{
+          console.log(login)
+          console.log(currency)
+          console.log(value)
+          toast.success("Recebemos sua mensagem e logo entraremos em contato!");
+          navigate("/");
+        }
+      }
+    }else if(login.cod.length < 10){
+      if(login.cod === ""){
+        toast.error("Código de Inscrição obrigatório");
+      }else{
+        toast.error("Código de Inscrição inválido");
+      }
+    }else{
+      console.log(login)
+      console.log(currency)
+      console.log(value)
+      toast.success("Recebemos sua mensagem e logo entraremos em contato!");
+      navigate("/");
+    }
 }
 
 return(
     <Container>
         <img src={logoAlan} alt="logoAlan" />
         <Content>
-            <form onSubmit = {handleSubmit} className={classes.root} noValidate autoComplete="off">
+            <form id="formDados" onSubmit = {handleSubmit} className={classes.root} noValidate autoComplete="off">
             <Info>
                 <span>Preencha com seus dados</span>
             </Info>
