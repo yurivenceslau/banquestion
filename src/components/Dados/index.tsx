@@ -9,6 +9,12 @@ export function Dados() {
         </div>
 
         <div className="dados">
+
+          <div className="nome">
+            <span>Nome:</span>
+            <span>Delair Cavalcante Andrade</span>
+          </div>
+
           <div className="email">
             <span>Email:</span>
             <span>delay@gmail.com</span>
@@ -16,8 +22,10 @@ export function Dados() {
 
           <div className="telefone">
             <span>Telefone:</span>
-            <span>88994235993</span>
+            <span>(88)994235993</span>
           </div>
+
+
         </div>
       </div>
 
@@ -27,20 +35,8 @@ export function Dados() {
         </div>
 
         <div className="dados">
-          <div className="email1">
-            <span>Email:</span>
-            <span>delay@gmail.com</span>
-          </div>
-
-          <div className="telefone1">
-            <span>Telefone:</span>
-            <span>88994235993</span>
-          </div>
         </div>
-
       </div>
-
-      
     </Container>
   );
 }

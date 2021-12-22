@@ -5,6 +5,7 @@ display: flex;
 flex-direction: column;
 
 background-color: whitesmoke;
+/* border-radius:50%; */
 
 box-shadow: 3px 3px 16px 6px #aaaaaa;
 width: 90%;
@@ -13,8 +14,6 @@ width: 90%;
 border-radius: 0.5rem;
 margin-top: 2.2rem;
 margin-bottom: 2.2rem;
-
-
 
 @media screen and (max-width:675px){
     width: 100%; 
