@@ -34,7 +34,7 @@ import { BsArrowBarLeft } from "react-icons/bs";
 import { BsClipboard } from "react-icons/bs";
 import { BsDoorOpenFill } from "react-icons/bs";
 import { BsReplyFill } from "react-icons/bs";
-import { AiFillSetting } from "react-icons/ai";
+import { AiFillQuestionCircle } from "react-icons/ai";
 import {BsFillPersonFill} from "react-icons/bs";
 
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
@@ -219,7 +219,7 @@ export default function Logado({
           <List style={{display:"flex",justifyContent:"space-between" ,flexDirection:"column"}}>
             <img className="alan-logo" src={alanImg} alt="logo alan"/>
             <div className="botoes-topo-nav">
-            <button onClick={() => navigate("/avaliacao")}>
+            <button onClick={() => {navigate("/avaliacao"); handleDrawerClose()}}>
               {/* <img src={editarImg} alt="editar" /> */}
               
               <div className="icon">
@@ -235,11 +235,11 @@ export default function Logado({
               <h2>Perfil</h2>
             </button>
 
-            <button onClick={() => {navigate("/perfil"); handleDrawerClose()}}>
+            <button onClick={() => {navigate("/sobrenos"); handleDrawerClose()}}>
               <div className="icon">
-                <AiFillSetting/>
+                <AiFillQuestionCircle/>
               </div>
-              <h2>Configurações</h2>
+              <h2>Sobre Nós</h2>
             </button>
             </div>
 

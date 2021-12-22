@@ -161,10 +161,10 @@ return(
             </div>
                 <div className="comps">
                   <TextField required id="outlined-basic" name="email" type="email" onChange={handleChange} label="E-mail" variant="outlined" />
-                  <TextField id="outlined-number" name="tel" onChange={handleChange} label="Number" value={login.tel} type="text" InputLabelProps={{shrink: true,}} variant="outlined" />
+                  <TextField id="outlined-number" name="tel" onChange={handleChange} label="Telefone" value={login.tel} type="text" InputLabelProps={{shrink: true,}} variant="outlined" />
             </div>
                 <div className = "comps">
-                  <TextField required id="outlined-basic" value={login.cod} onChange={handleChange} name="cod" label="Cod. de Inscreção" variant="outlined" />
+                  <TextField required id="outlined-basic" value={login.cod} onChange={handleChange} name="cod" label="Cod. de Inscrição" variant="outlined" />
                   <TextField
                       required
                       id="outlined-select-currency"
