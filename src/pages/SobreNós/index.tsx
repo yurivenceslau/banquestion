@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 import Logado from "../Logado";
+import { InfoEmpresa } from '../../components/InfoEmpresa';
+
 
 import { Container } from './styles';
 
@@ -14,7 +16,7 @@ export function SobreNós({open, handleDrawerClose, handleDrawerOpen}: propsLoga
     <>
       <Logado open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>
       <Container isOpen={open}>
-        <h1>Sobre Nós</h1>
+        <InfoEmpresa/>
       </Container>
     </>
   );
