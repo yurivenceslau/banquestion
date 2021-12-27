@@ -9,7 +9,7 @@ export function TituloAvaliacao() {
     <Container>
       <div className="titulo">
       <span>
-        Titulo
+        Questões de informatica 3ºANO
       </span>
       </div>
     </Container>

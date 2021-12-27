@@ -6,16 +6,22 @@ interface propsContainer{
 
 export const Container = styled.main<propsContainer>`
     display: flex;
+    background-color: #F0E8F5;
     justify-content:center;
     min-height: 91.4vh;
     margin-left: ${(props) => props.isOpen ? '14rem' : '5rem'}; 
     margin-top:4.1rem;
     
     @media screen and (max-width:675px){ 
+    margin-left: ${(props) => props.isOpen ? '14rem' : '0rem'}; 
+    
       
     min-height: 90vh; 
-    margin-left: 0.75rem; 
-    margin-right: 0.75rem; 
+    padding-left: 0.75rem; 
+    padding-right: 0.75rem; 
+
+    height:${(props) => (props.isOpen ? "1rem" : "")};
+    overflow-y:${(props) => (props.isOpen ? "hidden" : "")};   
   }
 
  

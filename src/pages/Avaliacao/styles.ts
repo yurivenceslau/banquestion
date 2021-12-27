@@ -18,8 +18,9 @@ export const Container = styled.main<propsContainer>`
   background-color: #F0E8F5;
   @media screen and (max-width:675px){
     min-height: 90vh; 
-    margin-left: 0.75rem; 
-    margin-right: 0.75rem; 
+    padding-left: 0.75rem; 
+    padding-right: 0.75rem; 
+    margin-left: ${(props) => props.isOpen ? '14rem' : '0rem'}; 
     
     height:${(props) => (props.isOpen ? "1rem" : "")};
     overflow-y:${(props) => (props.isOpen ? "hidden" : "")};

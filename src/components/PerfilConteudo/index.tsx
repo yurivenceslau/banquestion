@@ -1,10 +1,13 @@
 import { Container } from "./styles";
-import user  from '../../imagens/alan-perfil.jpg'
+// import user  from '../../imagens/alan-perfil.jpg'
+import { HiUserCircle } from "react-icons/hi";
+
+
 export function PerfilConteudo() {
   return (
     <Container>
       <div className="perfil_conteudo">
-        <img src={user} alt="o perfil" />
+       <HiUserCircle/>
       </div>
       <span>
      Alan Araujo 

@@ -11,7 +11,7 @@ box-shadow: 3px 3px 16px 6px #aaaaaa;
 width: 90%;
 /* height: 100%; */
 
-border-radius: 0.5rem;
+border-radius: 0.7rem;
 margin-top: 2.2rem;
 margin-bottom: 2.2rem;
 

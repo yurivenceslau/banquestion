@@ -12,7 +12,12 @@ export function Dados() {
 
           <div className="nome">
             <span>Nome:</span>
-            <span>Delair Cavalcante Andrade</span>
+            <span >Delair Cavalcante Andrade</span>
+          </div>
+
+          <div className="cpf">
+            <span>CPF:</span>
+            <span>088.869.659-09</span>
           </div>
 
           <div className="email">
@@ -25,16 +30,41 @@ export function Dados() {
             <span>(88)994235993</span>
           </div>
 
+          <div className="empresa">
+            <span>Empresa:</span>
+            <span>Alan Araújo</span>
+          </div>
 
         </div>
       </div>
 
       <div className="sobre">
         <div className="tituloDados">
-          <span>Sobre mim</span>
+          <span>Dados do curso</span>
         </div>
 
         <div className="dados">
+
+        <div className="nome">
+            <span>Nome do curso:</span>
+            <span>JavaScript</span>
+          </div>
+
+          <div className="nome">
+            <span>Código de inscrição:</span>
+            <span>088933493</span>
+          </div>
+
+          <div className="pagamento">
+            <span>Método de Pagamento:</span>
+            <span>Pix</span>
+          </div>
+
+          {/* <div className="pagamento">
+            <span>Data de inscrição:</span>
+            <span>02/05/2021</span>
+          </div> */}
+
         </div>
       </div>
     </Container>

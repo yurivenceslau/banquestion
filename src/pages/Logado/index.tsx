@@ -182,9 +182,9 @@ export default function Logado({
               <span className="div_span-2">Delay@agil.com</span>
               {/* style={{fontSize:"1rem"}} */}
               </div>
-              <div className="perfil">
+              {/* <div className="perfil">
                <img src={AlanImg} alt="imagem-de-perfil" />
-              </div>
+              </div> */}
               </div>
         </Content>
         

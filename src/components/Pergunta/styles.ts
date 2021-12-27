@@ -14,6 +14,8 @@ export const Container = styled.div`
       display: flex;
       width: 100%;
       font-weight: 500;
+      text-align: justify;
+
       padding-bottom: 0.5rem;
       /* min-height: 2.5rem; */
       /* background-color: red; */

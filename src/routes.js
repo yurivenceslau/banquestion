@@ -5,6 +5,7 @@ import { Login } from "./pages/Login";
 import { Contato } from "./pages/Contato";
 import { Avaliacao } from "./pages/Avaliacao";
 import { SobreNós } from "./pages/SobreNós";
+import { Autorizacao } from "./pages/Autorizacao";
 
 export function MainRoutes(){
      const [open,setOpen] = useState(false);
@@ -22,6 +23,7 @@ export function MainRoutes(){
               {/* <Route path="/" element={<Login/>}/> */}
               <Route path="/" element={<Login/>}/>
               <Route path="/contato" element={<Contato/>}/>
+              <Route path="/autorizacao" element={<Autorizacao  open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>
               <Route path="/perfil" element={<Perfil open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>
               <Route path="/avaliacao" element={<Avaliacao open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>
               <Route path="/sobrenos" element={<SobreNós open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>}/>

@@ -24,7 +24,7 @@ export const Nav = styled.main<propsNav>`
       /* padding-left:3rem; */
       margin: 0;
       width: 100%;
-      align-self: center
+      align-self: center;
    }
 
   
@@ -128,9 +128,11 @@ export const Content = styled.div<propsContent>`
     display: flex;
     height: 4rem;
     width: 14rem;
-    margin-right: 0.5rem;
+    margin-right: 0.6rem;
     /* justify-content: space-around; */
     align-items: center;
+
+    
 
     .div_spans {
       display: flex;
