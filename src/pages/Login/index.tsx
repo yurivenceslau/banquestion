@@ -4,7 +4,7 @@ import { Rodape } from '../../components/Rodapé';
 import { Container } from './styles';
 
 
-export function Login() {
+export function Login() { 
   return (
     <Container>
       <Cabecalho/>

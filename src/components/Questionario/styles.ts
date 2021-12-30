@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   background-color: whitesmoke;
-  width: 90%;
+  width: 73%;
   margin-top: 2.2rem;
   margin-bottom: 2.2rem;
   height: 100%;
@@ -13,20 +13,18 @@ export const Container = styled.div`
   border-radius: 0.5rem;
   box-shadow: 3px 3px 16px 4px #aaaaaa;
 
-  @media screen and (max-width:675px){
-    width: 100%; 
-    
+  @media screen and (max-width: 675px) {
+    width: 100%;
+    margin-top:1rem;
   }
- 
-   
 
   // Colors
-/* $color-1: #2ecc71;
+  /* $color-1: #2ecc71;
 $color-2: #3498db;
 $color-3: #f1c40f;
 $color-4: #e74c3c; */
 
-/* html, body {
+  /* html, body {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -38,7 +36,7 @@ body {
   align-items: center;
   background-color: #222;
 } */
-/* 
+  /* 
 .custom-radios {
   
   div {
@@ -67,9 +65,9 @@ body {
         background-position: center;
         text-align: center;
         /* line-height: 20px; */
-        /* background-color: #767676; */
-    
-        /* img {
+  /* background-color: #767676; */
+
+  /* img {
           opacity: 0;
           width: 10px;
           height: 10px;
@@ -98,7 +96,5 @@ body {
       opacity: 1;
     }
   }
-} */ 
+} */
 `;
-
-

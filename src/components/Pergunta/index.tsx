@@ -17,7 +17,7 @@ export function Pergunta({pergunta,alternativas}:props) {
   return (
     <Container>
       <div className="pergunta">
-            <h2>{pergunta ?? "Pergunta"}</h2>
+            <span>{pergunta ?? "Pergunta"}</span>
       </div>
 
       <form method="POST">

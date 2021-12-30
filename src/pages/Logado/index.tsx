@@ -123,16 +123,48 @@ interface propsLogado {
   open: boolean;
   handleDrawerClose: () => {};
   handleDrawerOpen: () => {};
+  entrada:boolean;
+  handleAvaliacaoOpen:() => {};
+  handleAvaliacaoClose:() => {};
 }
 
 export default function Logado({
   open,
   handleDrawerClose,
   handleDrawerOpen,
+  entrada,
+  handleAvaliacaoOpen,
+  handleAvaliacaoClose,
 }: propsLogado) {
   const navigate = useNavigate();
   const classes = useStyles();
   const theme = useTheme();
+
+  const caminhoEntrada=()=>{
+        if(entrada === false){
+          navigate("/autorizacao")
+          console.log("ta falso");
+        }else{
+          navigate("/avaliacao")
+          console.log("ta verdadeiro");
+          }
+  }
+
+  const caminhoSaida=()=>{
+    handleAvaliacaoClose();
+    handleDrawerClose();
+    navigate("/");
+
+  //   if(entrada === false){
+  //   // entrada = false;
+  //   navigate("/")
+  //   console.log(entrada);
+  //  }else{
+  //   entrada = false;
+  //   navigate("/")
+  //   console.log(entrada);
+  // }
+  }
   
   return (
     <Container isOpen={open}>
@@ -219,7 +251,7 @@ export default function Logado({
           <List style={{display:"flex",justifyContent:"space-between" ,flexDirection:"column"}}>
             <img className="alan-logo" src={alanImg} alt="logo alan"/>
             <div className="botoes-topo-nav">
-            <button onClick={() => {navigate("/avaliacao"); handleDrawerClose()}}>
+            <button onClick={() => {caminhoEntrada(); handleDrawerClose()}}>
               {/* <img src={editarImg} alt="editar" /> */}
               
               <div className="icon">
@@ -228,14 +260,14 @@ export default function Logado({
               <h2>Avaliação</h2>
             </button>
 
-            <button onClick={() => {navigate("/perfil"); handleDrawerClose()}}>
+            <button onClick={() => { navigate("/perfil"); handleDrawerClose()}}>
               <div className="icon">
                 <BsFillPersonFill/>
               </div>
               <h2>Perfil</h2>
             </button>
 
-            <button onClick={() => {navigate("/sobrenos"); handleDrawerClose()}}>
+            <button onClick={() => { navigate("/sobrenos"); handleDrawerClose()}}>
               <div className="icon">
                 <AiFillQuestionCircle/>
               </div>
@@ -253,7 +285,7 @@ export default function Logado({
             
           </List>
           <div className="botoa-sair-nav">
-            <button onClick={() => {navigate("/"); handleDrawerClose()}}>
+            <button onClick={() => {caminhoSaida()}}>
               <div className="icon">
                 <BsArrowBarLeft/>
               </div>

@@ -44,7 +44,7 @@ export const Nav = styled.main<propsNav>`
     transition: filter, 0.2s;
 
     :hover {
-      filter: brightness(0.9);
+      filter: brightness(0.7);
     }
   }
 
@@ -63,13 +63,13 @@ export const Nav = styled.main<propsNav>`
     /* flex-direction: column; */
     @media screen and (max-width: 675) {
       margin-top: 5rem;
-      background-color: red;
+      /* background-color: red; */
     }
   }
 
   .botoa-sair-nav {
     @media screen and (max-width: 675px) {
-      background-color: red;
+      /* background-color: red!important; */
       display: flex;
       margin-top: 3rem;
     }
