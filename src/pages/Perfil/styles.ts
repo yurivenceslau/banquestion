@@ -9,7 +9,7 @@ export const Container = styled.main<propsContainer>`
     background-color: #F0E8F5;
     justify-content:center;
     min-height: 91.4vh;
-    margin-left: ${(props) => props.isOpen ? '14rem' : '5rem'}; 
+    margin-left: ${(props) => props.isOpen ? '14rem' : '4.9rem'}; 
     margin-top:4.1rem;
     
     @media screen and (max-width:675px){ 

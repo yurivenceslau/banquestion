@@ -76,7 +76,7 @@ export function EspacoLogin(){
           toast.error("Senha obrigatória!")
         }else{
           console.log(login)
-          navigate("/avaliacao")
+          navigate("/autorizacao")
         }
     }
     const handleClickShowPassword = () => {

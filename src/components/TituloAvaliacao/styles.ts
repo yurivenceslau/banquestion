@@ -5,6 +5,7 @@ export const Container = styled.div`
     display: flex;
     /* justify-content:center; */
     flex-direction: column;
+    justify-content:center;
     align-items: center;
     width: 100%;
     min-height: 6rem;
@@ -27,7 +28,7 @@ export const Container = styled.div`
     span {
       margin-top: 1.2rem;
       margin-bottom: 1.2rem;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       font-weight: 500;
     }
   }

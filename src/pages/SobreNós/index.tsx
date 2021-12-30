@@ -1,23 +1,39 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 import Logado from "../Logado";
-import { InfoEmpresa } from '../../components/InfoEmpresa';
+import { InfoEmpresa } from "../../components/InfoEmpresa";
 
-
-import { Container } from './styles';
+import { Container } from "./styles";
 
 interface propsLogado {
-  open:boolean;
-  handleDrawerClose: ()=>{};
-  handleDrawerOpen: ()=>{};
- }
+  open: boolean;
+  handleDrawerClose: () => {};
+  handleDrawerOpen: () => {};
+  entrada: boolean;
+  handleAvaliacaoOpen: () => {};
+  handleAvaliacaoClose: () => {};
+}
 
-export function SobreNós({open, handleDrawerClose, handleDrawerOpen}: propsLogado) {
+export function SobreNós({
+  open,
+  handleDrawerClose,
+  handleDrawerOpen,
+  entrada,
+  handleAvaliacaoOpen,
+  handleAvaliacaoClose,
+}: propsLogado) {
   return (
     <>
-      <Logado open={open} handleDrawerClose={handleDrawerClose} handleDrawerOpen={handleDrawerOpen}/>
+      <Logado
+        open={open}
+        handleDrawerClose={handleDrawerClose}
+        entrada={entrada}
+        handleAvaliacaoOpen={handleAvaliacaoOpen}
+        handleAvaliacaoClose={handleAvaliacaoClose}
+        handleDrawerOpen={handleDrawerOpen}
+      />
       <Container isOpen={open}>
-        <InfoEmpresa/>
+        <InfoEmpresa />
       </Container>
     </>
   );
-};
+}

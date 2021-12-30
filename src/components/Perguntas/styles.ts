@@ -14,7 +14,18 @@ export const Container = styled.div`
     background-color: #1a6462;
     border: 0;
     border-radius: 0.7rem;
+    cursor: pointer;
+
+    transition: filter, 0.2s;
+
+    :hover {
+      filter: brightness(0.7);
+      /* padding: -0.7rem 1.2rem; */
+
+    }
     /* box-shadow: 3px 3px 16px 4px #aaaaaa; */
+
+    
 
     span{
       color: white;

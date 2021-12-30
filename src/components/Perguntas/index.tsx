@@ -1,7 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { Pergunta } from "../Pergunta";
 import { Container } from "./styles";
 
-export function Perguntas() {
+interface propsPerguntas {
+  entrada: boolean;
+  handleAvaliacaoOpen: () => {};
+  handleAvaliacaoClose: () => {};
+}
+
+export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:propsPerguntas) {
+  const navigate = useNavigate();
   let arr = [
     {
       pergunta:
@@ -37,7 +45,7 @@ export function Perguntas() {
           <Pergunta key={idx} pergunta={per.pergunta} alternativas={per.alternativas} />
         );
       })}
-      <button type="submit">
+      <button type="submit" onClick={()=>{navigate("/autorizacao");handleAvaliacaoClose()}}>
         <span>
          Enviar
         </span>
