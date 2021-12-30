@@ -38,25 +38,30 @@ export const TituloGeral = styled.div`
     h1{
         margin: 0;
     }
+    @media screen and (max-width: 675px) {
+        h1{
+            font-size: 2.4rem;
+        }
+    }
 
 `
 
 export const Descricao = styled.div`
-    width: 65%;
+    width: 85%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
     flex-direction: row;
     .desc_img{
         margin-right: 1rem;
         img{
-            width: 12rem;
-            height: 12rem;
+            width: 16rem;
+            height: 16rem;
         }
     }
     .desc_texto{
-        width: 70%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         span{
@@ -67,6 +72,14 @@ export const Descricao = styled.div`
             }
         }
     }
-
+    @media screen and (max-width: 675px) {
+        flex-direction: column;
+        .desc_img{
+            margin-right: 0;
+        }
+        .desc_texto{
+            margin-bottom: 1.5rem;
+        }
+    }
 
 `;

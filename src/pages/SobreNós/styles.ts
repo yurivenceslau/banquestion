@@ -8,7 +8,7 @@ interface propsContainer {
   display: flex;
   margin: 0;
   transition: margin-left,0.2s;
-  margin-left: ${(props) => props.isOpen ? '14rem' : '5rem' }; 
+  margin-left: ${(props) => props.isOpen ? '14rem' : '4.9rem' }; 
   /* min-height: 100vh;
   width: 100%; */
   min-height: 91vh;

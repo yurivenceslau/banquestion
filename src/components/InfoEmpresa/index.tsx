@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import maosdadas from '../../imagens/maosdadas.png'
+import logoAlinhada from '../../imagens/logoAlinhada.png'
+import { Contato } from '../Contato';
 import { Container, Descricao, TituloGeral, TituloSobre } from './styles';
-import { InfoFuncion } from '../../components/InfoFuncion';
 
 
 export function InfoEmpresa() {
@@ -15,19 +15,21 @@ export function InfoEmpresa() {
       </TituloGeral>
       <Descricao>
         <div className="desc_img">
-          <img src={maosdadas} alt="maosdadas.jpg" />
+          <img src={logoAlinhada} alt="logoAlinhada.jpg" />
         </div>
         
         <div className="desc_texto">
           <span>
-            Somos uma empresa de engenharia de telecomunicações focada em colaborar com nossos amigos, parceiros e clientes. Temos uma equipe de profissionais super capacitada com foco em resultados rápidos, eficientes e com qualidade. Prezamos fortemente pela ética, transparência e acima de tudo por um preço justo. Ah! A maioria de nossos clientes se tornam nossos grandes amigos.
+          A Ágil Engenharia de Telecomunicações é uma empresa que traz varios serviços em relação ao mundo da Engenharia de Telecomunicão, como recurso de compartilhamento de 
+postes, cursos e projetos de fibra ótica, sempre colaborando da melhor maneira possível com nossos amigos, parceiros e clientes. Nossa equipe é formada 
+por otimos profissionais focada em trazer resultados de otima qualidade e eficiencia por um preço acessivel e prazos agradaveis para nossos clientes.
           </span>
           <span>
             Estamos a sua disposição para fecharmos negócios, crescermos juntos e tomarmos aquele bom e velho café.
           </span>
         </div>
       </Descricao>
-      <InfoFuncion/>
+      <Contato/>
     </Container>
   );
 };

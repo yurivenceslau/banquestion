@@ -32,9 +32,9 @@ export function Perguntas() {
   ];
   return (
     <Container>
-      {arr.map((per) => {
+      {arr.map((per, idx) => {
         return (
-          <Pergunta pergunta={per.pergunta} alternativas={per.alternativas} />
+          <Pergunta key={idx} pergunta={per.pergunta} alternativas={per.alternativas} />
         );
       })}
       <button type="submit">
