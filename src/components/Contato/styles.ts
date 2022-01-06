@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    height: 21rem;
+    min-height: 21rem;
     border-radius: 0 0 0.5rem 0.5rem;
     display: flex;
     flex-direction: column;
@@ -31,8 +31,13 @@ export const EspacoContato = styled.div`
     display: flex;
     justify-content: space-around;
     width: 95%;
-    height: 13rem;
+    min-height: 13rem;
     margin-top: 1rem;
+
+    @media screen and (max-width: 675px){
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const CardContato = styled.a`
@@ -49,6 +54,7 @@ export const CardContato = styled.a`
     text-decoration: none;
     color: #000;
     transition: 0.4s;
+    margin-bottom: 1.5rem;
     
     :hover{
         width: 13rem;

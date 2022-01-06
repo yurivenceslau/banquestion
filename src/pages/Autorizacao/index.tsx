@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logado from "../Logado";
+import Modal from "react-modal"
 import { Container } from "./styles";
+import { IniciarProvaModal } from "../../components/IniciarProvaModal";
 
 interface propsLogado {
   open: boolean;
@@ -21,6 +23,16 @@ export function Autorizacao({
   handleAvaliacaoClose,
 }: propsLogado) {
   const navigate = useNavigate();
+
+  const [isStartTestModalOpen, setisStartTestModalOpen] = useState(false);
+
+  const handleStartTestModalOpen = () => {
+    setisStartTestModalOpen(true);
+  };
+
+  const handleStartTestModalClose = () => {
+    setisStartTestModalOpen(false);
+  };
 
   return (
     <>
@@ -57,15 +69,24 @@ export function Autorizacao({
 
           <div className="buttonDiv">
             <button
-              onClick={() => {
-                handleAvaliacaoOpen();
-                navigate("/avaliacao");
-              }}
+              onClick={handleStartTestModalOpen
+              //   () => {
+              //   handleAvaliacaoOpen();
+              //   navigate("/avaliacao");
+              // }
+            }
             >
               <span>Iniciar</span>
             </button>
           </div>
         </div>
+
+        <IniciarProvaModal 
+        isOpen={isStartTestModalOpen} 
+        onRequestClose={handleStartTestModalClose} 
+        entrada={entrada}
+        handleAvaliacaoOpen={handleAvaliacaoOpen}
+        handleAvaliacaoClose={handleAvaliacaoClose}/>
       </Container>
     </>
   );

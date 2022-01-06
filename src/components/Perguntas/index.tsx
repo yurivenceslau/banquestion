@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { Pergunta } from "../Pergunta";
 import { Container } from "./styles";
+import { useState } from "react";
+import { FinalizarProvaModal } from "../FinalizarProvaModal";
 
 interface propsPerguntas {
   entrada: boolean;
@@ -38,6 +40,15 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
       ],
     },
   ];
+  const [isFinishTestModalOpen, setisFinishTestModalOpen] = useState(false);
+
+  const handleFinishTestModalOpen = () => {
+    setisFinishTestModalOpen(true);
+  };
+
+  const handleFinishTestModalClose = () => {
+    setisFinishTestModalOpen(false);
+  };
   return (
     <Container>
       {arr.map((per, idx) => {
@@ -45,11 +56,17 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
           <Pergunta key={idx} pergunta={per.pergunta} alternativas={per.alternativas} />
         );
       })}
-      <button type="submit" onClick={()=>{navigate("/autorizacao");handleAvaliacaoClose()}}>
+      <button type="submit" onClick={handleFinishTestModalOpen}>
         <span>
          Enviar
         </span>
       </button>
+      <FinalizarProvaModal 
+        isOpen={isFinishTestModalOpen} 
+        onRequestClose={handleFinishTestModalClose} 
+        entrada={entrada}
+        handleAvaliacaoOpen={handleAvaliacaoOpen}
+        handleAvaliacaoClose={handleAvaliacaoClose}/>
     </Container>
   );
 }

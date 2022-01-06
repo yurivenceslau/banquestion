@@ -1,4 +1,5 @@
 import Logado from "../Logado";
+import { useState } from "react";
 import { Container } from "./styles";
 import { Questionario } from "../../components/Questionario";
 
