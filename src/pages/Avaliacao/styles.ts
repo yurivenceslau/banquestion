@@ -16,6 +16,11 @@ export const Container = styled.main<propsContainer>`
   margin-top:2rem;
   justify-content: center;
   background-color: #F0E8F5;
+
+  @media screen and (min-width:676px){
+  margin-top:0rem;
+  }
+
   @media screen and (max-width:675px){
     min-height: 90vh; 
     padding-left: 0.75rem; 

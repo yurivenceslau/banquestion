@@ -129,21 +129,21 @@ export const Content = styled.div`
         width: 20%;
         box-shadow: 0px 0px 0px transparent;
 
-       input{
+        input{
            width: 50%;
            font-size: 1.2rem;
            height: 1.8rem;
-       }
+        }
 
-       label{
+        label{
            font-size: 1.3rem;
-       }
+        }
 
-       button{
+        button{
            font-size: 1rem;
            height: 3.5rem;
-       }
-       .comps{
+        }
+        .comps{
            width: auto;
             margin: auto;
             display: flex;
@@ -153,10 +153,10 @@ export const Content = styled.div`
             width: auto;
             margin: auto;
         }
-       .makeStyles-root-12{
+        .makeStyles-root-12{
            margin-left: 10rem;
-       }
-       .MuiOutlinedInput-multiline{
+        }
+        .MuiOutlinedInput-multiline{
             width: 100%;
             min-height: 4.2rem;
         }
@@ -173,10 +173,7 @@ export const Content = styled.div`
             transform: translate(14px, -6px) scale(0.6)
         }
     }
-
-
 `
-
 
 export const Info = styled.h1`
     display: flex;
@@ -208,7 +205,6 @@ export const Contatos = styled.div`
     border-top: 0.1px solid rgba(0, 0, 0, 0.4);
     width: 19rem;
 
-
     strong{
         font-weight: 550;
         margin-top: 1.5rem;
@@ -232,4 +228,4 @@ export const Alinhador = styled.div`
         justify-content: center;
         align-items: center;
     }
-`
+`;

@@ -9,7 +9,7 @@ export const Container = styled.main<propsContainer>`
   align-items: center;
   flex-direction: column;
   background-color: #f0e8f5;
-  justify-content: center;
+  /* justify-content: center; */
   min-height: 91.4vh;
   margin-left: ${(props) => (props.isOpen ? "14rem" : "4.9rem")};
   margin-top: 4.1rem;

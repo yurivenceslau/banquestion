@@ -7,6 +7,9 @@ interface propsContainer{
 export const Container = styled.main<propsContainer>`
     display: flex;
     background-color: #F0E8F5;
+    /* overflow-y:hidden; 
+    height:1rem ; */
+
     justify-content:center;
     min-height: 91.4vh;
     margin-left: ${(props) => props.isOpen ? '14rem' : '4.9rem'}; 

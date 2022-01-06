@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { Pergunta } from "../Pergunta";
 import { Container } from "./styles";
+import {toast} from 'react-toastify';
+
 
 interface propsPerguntas {
   entrada: boolean;
@@ -38,6 +40,13 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
       ],
     },
   ];
+
+  const confirm=()=>{
+    navigate("/autorizacao");
+    handleAvaliacaoClose();
+    toast.success("Avaliação enviada");
+  }
+
   return (
     <Container>
       {arr.map((per, idx) => {
@@ -45,7 +54,8 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
           <Pergunta key={idx} pergunta={per.pergunta} alternativas={per.alternativas} />
         );
       })}
-      <button type="submit" onClick={()=>{navigate("/autorizacao");handleAvaliacaoClose()}}>
+      <button type="submit" onClick={()=>{confirm()}}>
+        
         <span>
          Enviar
         </span>
