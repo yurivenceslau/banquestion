@@ -35,7 +35,8 @@ export const Container = styled.div`
     @media screen and (max-width: 300px) {
         width: 19.6rem;
     }
-`
+`;
+
 export const Content = styled.form`
     /* background-color: #1A6462; */
     border-radius: 0.5rem;
@@ -48,6 +49,7 @@ export const Content = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     input{
         background-color: #e2e2e2;
         border: 0;
@@ -73,28 +75,28 @@ export const Content = styled.form`
         :hover{
             filter: brightness(0.9);
         }
-    }
-    a{
-        margin: 0.5rem;
-        font-size: 0.83rem;
-        color: white;
-        font-weight: 510;
-    }
+        }
+        a{
+            margin: 0.5rem;
+            font-size: 0.83rem;
+            color: white;
+            font-weight: 510;
+        }
 
     @media screen and (max-width: 675px) {
         width: 100%;
-       box-shadow: 0px 0px 0px transparent;
+        box-shadow: 0px 0px 0px transparent;
 
-       input{
-           width: 90%;
-           font-size: 1.2rem;
-           height: 1.8rem;
-       }
+        input{
+            width: 90%;
+            font-size: 1.2rem;
+            height: 1.8rem;
+        }
 
-       label{
+        label{
            font-size: 1.3rem;
            margin-top: 0.1rem;
-       }
+        }
 
         button{
             font-size: 1rem;
@@ -107,10 +109,7 @@ export const Content = styled.form`
             transform: translate(14px, -6px) scale(0.6)
         }
     }
-    
-
-`
-
+`;
 
 export const Info = styled.h1`
     display: flex;
@@ -130,8 +129,8 @@ export const Info = styled.h1`
             font-size: 1.2rem;
         }
     }
+`;
 
-`
 export const Contatos = styled.div`
     color: #1A6462;
     display: flex;
@@ -141,7 +140,6 @@ export const Contatos = styled.div`
     margin-top: 1.5rem;
     border-top: 0.1px solid rgba(0, 0, 0, 0.4);
     width: 19rem;
-
 
     strong{
         font-weight: 550;
@@ -153,4 +151,4 @@ export const Contatos = styled.div`
         font-size: 0.9rem;
     }
 
-`
+`;

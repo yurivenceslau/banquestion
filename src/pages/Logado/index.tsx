@@ -143,15 +143,13 @@ export default function Logado({
   const caminhoEntrada=()=>{
         if(entrada === false){
           navigate("/autorizacao")
-          console.log("ta falso");
         }else{
           navigate("/avaliacao")
-          console.log("ta verdadeiro");
           }
   }
 
   const caminhoSaida=()=>{
-    handleAvaliacaoClose();
+    // handleAvaliacaoClose();
     handleDrawerClose();
     navigate("/");
 

@@ -22,13 +22,10 @@ export function MainRoutes() {
 
   const handleAvaliacaoOpen = () => {
     setEntrada(true);
-    console.log("deu certo");
   };
 
   const handleAvaliacaoClose = () => {
     setEntrada(false);
-    console.log("isso é uma função");
-
   };
 
   return (

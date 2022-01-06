@@ -4,20 +4,19 @@ export const Container = styled.div`
     display: flex;
     flex-direction:column;
     width: 100%;
-    height: 14rem;
+    height: 16rem;
     justify-content: center;
     align-items: center;
     margin-bottom:0.5rem ;
     @media screen and (max-width: 675px) {
       width: 100%;
-      height: 12rem ;
+      height: 14rem ;
     }
 
     .perfil_conteudo{
     display: flex;
     justify-content:center;
     font-size:10rem;
-    /* z-index:2; */
     width: 10rem;
     height: 10rem;
 
@@ -33,14 +32,50 @@ export const Container = styled.div`
       /* z-index:1; */
       color:#1A6462;
       @media screen and (max-width: 675px) {
-        margin-top: -1rem;
+        /* margin-top: -1rem; */
+        font-size:7.5rem;
     }
 
     }
+  
 
     @media screen and (max-width: 675px) {
       width: 8rem;
       height: 8rem;
+    }
+  }
+
+  span{
+    /* height: 8rem; */
+    margin-bottom:2rem ;
+  }
+
+  button {
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+     margin-top: 0.5rem;  
+    height: 2.4rem;
+    padding: 0.7rem 1rem;
+  
+    color: white;
+    font-size:1.2rem ;
+
+    background-color: #1a6462;
+    border: 0;
+    border-radius: 0.7rem;
+    cursor: pointer;
+
+    transition: filter, 0.2s;
+
+    :hover {
+      filter: brightness(0.7);
+
+    }
+
+    svg{
+      display: flex;
+      margin-right:1rem;
     }
   }
 

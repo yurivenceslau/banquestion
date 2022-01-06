@@ -3,6 +3,8 @@ import { Pergunta } from "../Pergunta";
 import { Container } from "./styles";
 import { useState } from "react";
 import { FinalizarProvaModal } from "../FinalizarProvaModal";
+import {toast} from 'react-toastify';
+
 
 interface propsPerguntas {
   entrada: boolean;
@@ -49,6 +51,8 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
   const handleFinishTestModalClose = () => {
     setisFinishTestModalOpen(false);
   };
+
+
   return (
     <Container>
       {arr.map((per, idx) => {

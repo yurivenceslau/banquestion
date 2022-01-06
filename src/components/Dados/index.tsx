@@ -45,12 +45,23 @@ export function Dados() {
 
         <div className="dados">
 
-        <div className="nome">
+        <div className="curso">
             <span>Nome do curso:</span>
             <span>JavaScript</span>
           </div>
 
-          <div className="nome">
+          
+          <div className="nome1">
+            <span><h1>Nome do curso:</h1>
+              <input type="text" 
+            // value={"JavaScript"}
+            />
+            {/* Nome do curso: */}
+            </span>
+            {/* <span>JavaScript</span> */}
+          </div>
+
+          <div className="codigo">
             <span>Código de inscrição:</span>
             <span>088933493</span>
           </div>
@@ -60,10 +71,10 @@ export function Dados() {
             <span>Pix</span>
           </div>
 
-          {/* <div className="pagamento">
+          <div className="data">
             <span>Data de inscrição:</span>
             <span>02/05/2021</span>
-          </div> */}
+          </div>
 
         </div>
       </div>

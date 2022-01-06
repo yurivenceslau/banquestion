@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { Botoes, Container, TituloModal } from './styles';
 import { IoMdClose } from "react-icons/io";
+import {toast} from 'react-toastify';
 
 
 interface FinalizarProvaModalProps {
@@ -22,6 +23,11 @@ export function FinalizarProvaModal({
   handleAvaliacaoOpen,
   handleAvaliacaoClose, }: FinalizarProvaModalProps) {
     const navigate = useNavigate();
+    const confirm=()=>{
+      navigate("/autorizacao");
+      handleAvaliacaoClose();
+      toast.success("Avaliação enviada");
+    }
 
   return (
     <Modal 
@@ -39,10 +45,7 @@ export function FinalizarProvaModal({
         <Botoes>
           <button className='nao' onClick={onRequestClose}>NÃO</button>
           <button className='sim' onClick={
-              () => {
-                handleAvaliacaoClose();
-                navigate("/autorizacao");
-              }
+              () => {confirm()}
           }>SIM</button>
         </Botoes>
       </Container>

@@ -10,8 +10,8 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-
 `;
+
 export const TituloSobre = styled.div`
     /* border-bottom: 1px solid #000; */
     width: 100%;
@@ -44,7 +44,7 @@ export const TituloGeral = styled.div`
         }
     }
 
-`
+`;
 
 export const Descricao = styled.div`
     width: 85%;
