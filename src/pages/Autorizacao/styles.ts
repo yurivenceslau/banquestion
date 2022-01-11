@@ -59,7 +59,7 @@ export const Container = styled.main<propsContainer>`
     padding: 0.7rem 1rem;
     /* width: 1rem; */
     /* height: 0.7rem ; */
-    background-color: #1a6462;
+    background-image: linear-gradient(to left top, #1A6462, #059E75);
     border: 0;
     border-radius: 0.7rem;
     cursor: pointer;
@@ -74,6 +74,16 @@ export const Container = styled.main<propsContainer>`
       margin:0rem;
       font-weight:500;
       font-size:1.2rem ;
+    }
+  }
+  .botaoResultado{
+    border: 2px solid #1a6462;
+    margin-left: 1rem;
+    background-color: whitesmoke;
+    background-image: none;
+    opacity: 80%;
+    span{
+      color: black;
     }
   }
 }

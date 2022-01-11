@@ -11,7 +11,7 @@ export const Container = styled.div`
     margin-top: 3rem;
     padding: 0.7rem 1rem;
     margin-bottom: 1.5rem;
-    background-color: #1a6462;
+    background-image: linear-gradient(to left top, #1A6462, #059E75);
     border: 0;
     border-radius: 0.7rem;
     cursor: pointer;

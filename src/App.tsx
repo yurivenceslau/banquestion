@@ -18,9 +18,6 @@ import { GlobalStyle } from "./styles/global";
 export function App() {
   const [login,setLogin]= useState(true);
   
-
-  
-
   return (
     <>
       <ToastContainer

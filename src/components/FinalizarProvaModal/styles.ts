@@ -39,7 +39,7 @@ export const Botoes = styled.div`
   justify-content: space-around;
   button {
     border: 0;
-    border-radius: 25rem;
+    border-radius: 0.7rem;
     width: 5rem;
     height: 2rem;
     cursor: pointer;

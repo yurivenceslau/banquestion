@@ -15,7 +15,7 @@ import { Toolbar } from "@material-ui/core";
 import List from "@material-ui/core/List";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { Typography } from "@material-ui/core";
-
+import { LogoutModal } from "../../components/LogoutModal"
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
@@ -163,6 +163,15 @@ export default function Logado({
   //   console.log(entrada);
   // }
   }
+  const [isStartTestModalOpen, setisStartTestModalOpen] = useState(false);
+
+  const handleStartTestModalOpen = () => {
+    setisStartTestModalOpen(true);
+  };
+
+  const handleStartTestModalClose = () => {
+    setisStartTestModalOpen(false);
+  };
   
   return (
     <Container isOpen={open}>
@@ -282,8 +291,8 @@ export default function Logado({
             </button> */}
             
           </List>
-          <div className="botoa-sair-nav">
-            <button onClick={() => {caminhoSaida()}}>
+          <div className="botao-sair-nav">
+            <button onClick={handleStartTestModalOpen}>
               <div className="icon">
                 <BsArrowBarLeft/>
               </div>
@@ -296,6 +305,15 @@ export default function Logado({
         <div className={classes.toolbar} />
       </main> */}
     </div>
+    <LogoutModal
+        open={open}
+        handleDrawerClose={handleDrawerClose}
+        handleDrawerOpen={handleDrawerOpen}
+        isOpen={isStartTestModalOpen} 
+        onRequestClose={handleStartTestModalClose} 
+        entrada={entrada}
+        handleAvaliacaoOpen={handleAvaliacaoOpen}
+        handleAvaliacaoClose={handleAvaliacaoClose}/>
     </Container>
   );
 }

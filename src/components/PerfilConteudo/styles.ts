@@ -59,9 +59,9 @@ export const Container = styled.div`
     padding: 0.7rem 1rem;
   
     color: white;
-    font-size:1.2rem ;
+    font-size: 1.2rem;
 
-    background-color: #1a6462;
+    background-image: linear-gradient(to left top, #1A6462, #059E75);
     border: 0;
     border-radius: 0.7rem;
     cursor: pointer;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    min-height: 21rem;
+    min-height: 22rem;
     border-radius: 0 0 0.5rem 0.5rem;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@ export const EspacoContato = styled.div`
     justify-content: space-around;
     width: 95%;
     min-height: 13rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     @media screen and (max-width: 675px){
         flex-direction: column;

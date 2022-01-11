@@ -6,6 +6,7 @@ import { Contato } from "./pages/Contato";
 import { Avaliacao } from "./pages/Avaliacao";
 import { SobreNós } from "./pages/SobreNós";
 import { Autorizacao } from "./pages/Autorizacao";
+import { ResultadoAvaliacao } from "./pages/ResultadoAvaliacao";
 
 export function MainRoutes() {
   const [open, setOpen] = useState(false);
@@ -75,6 +76,17 @@ export function MainRoutes() {
         path="/sobrenos"
         element={
           <SobreNós
+            open={open}
+            entrada={entrada}
+            handleDrawerClose={handleDrawerClose}
+            handleDrawerOpen={handleDrawerOpen}
+          />
+        }
+      />
+      <Route
+        path="/ResultadoAvaliacao"
+        element={
+          <ResultadoAvaliacao
             open={open}
             entrada={entrada}
             handleDrawerClose={handleDrawerClose}

@@ -71,7 +71,6 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 35rem;
         border-radius: 0.25rem;
         padding: 1rem 2rem;
-        transition: 1s;
         text-align: justify;
     }
     .start-test-close {
@@ -88,5 +87,13 @@ export const GlobalStyle = createGlobalStyle`
     .ReactModal__Body--open {
         overflow: hidden;
     }
-
+    .exit-content{
+        position: relative;
+        background-color: whitesmoke;
+        width: 93%;
+        max-width: 25rem;
+        border-radius: 0.25rem;
+        padding: 1rem 2rem;
+        text-align: justify;
+    }
 `;

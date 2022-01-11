@@ -60,10 +60,11 @@ export const Content = styled.form`
             width: 93%;
         }
     }
+
     .botao_acessar{
-        background-color: white;
+        background-color: #1A6462;
         border: 0;
-        border-radius: 25rem;
+        border-radius: 0.7rem;
         height: 2.2rem;
         width: 19rem;
         margin-top: 1.2rem;

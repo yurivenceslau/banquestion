@@ -67,7 +67,7 @@ export const Nav = styled.main<propsNav>`
     }
   }
 
-  .botoa-sair-nav {
+  .botao-sair-nav {
     @media screen and (max-width: 675px) {
       /* background-color: red!important; */
       display: flex;

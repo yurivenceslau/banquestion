@@ -60,9 +60,12 @@ export function Autorizacao({
               <li>Não faça consulta de nenhuma natureza.</li>
               <li>Cada questão tera apenas uma alternativa correta.</li>
               <li>
-                Ao finalizar click no botaão
+                Ao finalizar click no botão
                 <strong> Enviar </strong>e sua resposta será enviada com
                 sucesso.
+              </li>
+              <li>
+                Se já finalizou a prova uma vez, você pode clicar no botão<strong> Resultado </strong>para ver sua pontuação.
               </li>
             </ol>
           </div>
@@ -70,13 +73,15 @@ export function Autorizacao({
           <div className="buttonDiv">
             <button
               onClick={handleStartTestModalOpen
-              //   () => {
-              //   handleAvaliacaoOpen();
-              //   navigate("/avaliacao");
-              // }
             }
             >
               <span>Iniciar</span>
+            </button>
+            <button
+            className="botaoResultado"
+            onClick={() => navigate("/ResultadoAvaliacao")}
+            >
+              <span>Resultado</span>
             </button>
           </div>
         </div>
