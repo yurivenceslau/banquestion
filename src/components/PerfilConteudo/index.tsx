@@ -8,7 +8,14 @@ import { NovoPerfil } from "../NovoPerfil";
 
 
 export function PerfilConteudo() {
-  
+  const [dados] = useState({
+    nome: "werlley",
+    cpf: "025.255.225-69",
+    email: "werlley@gmail.com",
+    telefone: "(88) 58585-5858",
+    empresa: "Ágil Engenharia",
+    pagamento:"Pix",
+  })
   const [ModalOpen,setModalOpen] = useState(false);
   const handleModalOpen=()=>{
     setModalOpen(true);
@@ -33,7 +40,7 @@ export function PerfilConteudo() {
       
 
     </Container>
-      <NovoPerfil handleModalClose={handleModalClose} ModalOpen={ModalOpen}/>
+      <NovoPerfil handleModalClose={handleModalClose} ModalOpen={ModalOpen} dados={dados}/>
       </>
   );
 }

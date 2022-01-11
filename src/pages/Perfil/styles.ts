@@ -7,6 +7,7 @@ interface propsContainer{
 export const Container = styled.main<propsContainer>`
     display: flex;
     background-color: #F0E8F5;
+    /* background-color: red; */
     /* overflow-y:hidden; 
     height:1rem ; */
 
