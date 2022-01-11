@@ -5,15 +5,114 @@ export const GlobalStyle = createGlobalStyle`
          display: flex;
          background-color:whitesmoke;
          /* padding: 1.5rem; */
-         border-radius:0.24rem;
-         margin-left: 0.26rem; 
-
+         border-radius:0.4rem;
+         margin-left: 6rem; 
+         position: relative;
          min-height: 30rem;
-         width: 90%;
-         @media screen and (max-width: 675px) {
+         margin-bottom:-2.1rem ;
+         justify-content:center;
+         align-items:center;
+         width: 50%;
+         /* overflow-y: scroll; */
+
+        /* transition: 1s; */
+         /* margin-left: 10rem;
+         margin-right: 10rem;
+        margin-top: 4rem; */
+        @media screen and (max-width: 675px) {
+            width: 99%;
             margin-left: 0rem;
-            margin-top: 0rem;
+            margin-top: 27.8rem;
         }
+        @media screen and (max-width: 320px) {
+            margin-left: 0rem;
+            margin-top: 33rem;
+            width: 99%;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            margin-left: 5rem;
+            margin-top: 2rem;
+            width: 76.2%;
+
+        }
+        @media screen and (min-width: 1280px) and (max-width: 1280px) {
+            margin-left: 5rem;
+            margin-top: 2rem;
+            width: 75%;
+
+        }
+        @media screen and (min-width: 667px) and (max-width: 667px) {
+            /* margin-left: 5rem; */
+            margin-top: 45rem;
+            width: 55%;
+        }
+        @media screen and (min-width: 740PX) and (max-width: 740PX) {
+            margin-left: 5rem;
+            margin-top: 50rem;
+            width: 50%;
+        }
+        @media screen and (min-width: 844px) and (max-width: 896px) {
+            margin-left: 5rem;
+            margin-top: 18rem;
+            width: 84%;
+        }
+        @media screen and (min-width: 914px) and (max-width: 915px) {
+            margin-left: 5rem;
+            margin-top: 18rem;
+            width: 84%;
+        }
+        @media screen and (min-width: 912px) and (max-width: 912px) {
+            margin-left: 5rem;
+            /* margin-top: 18rem; */
+            width: 82%;
+        }
+        @media screen and (min-width: 1368px) and (max-width: 1368px) {
+            margin-left: 5rem;
+            /* margin-top: 18rem; */
+            width: 55%;
+        }
+        @media screen and (min-width: 720PX) and (max-width: 720px) {
+            margin-left: 5rem;
+            margin-top: 35rem;
+            width: 50%;
+        }
+        @media screen and (min-width: 1180px) and (max-width: 1180px) {
+            margin-left: 5rem;
+            margin-top: 6rem;
+            width: 78%;
+        }
+        @media screen and (min-width: 1180px) and (max-width: 1180px) {
+            margin-left: 5rem;
+            margin-top: 6rem;
+            width: 78%;
+        }
+        @media screen and (min-width:  540px) and (max-width:  540px) {
+            margin-left: 0rem;
+            margin-top: 28rem;
+            width: 68%;
+        }
+        @media screen and (min-width:   414px) and (max-width:   414px) {
+            margin-left: 0rem;
+            margin-top: 28rem;
+            width: 90%;
+        }
+        @media screen and (min-width:  692px) and (max-width:   692px) {
+            margin-left: 5rem;
+            margin-top: 48rem;
+            width: 53%;
+        }
+        @media screen and (min-width:  725px) and (max-width:   725px) {
+            margin-left: 5rem;
+            margin-top: 48rem;
+            width: 50%;
+        }
+        
+        @media screen and (min-width:  653px) and (max-width:  653px) {
+            margin-left: 0rem;
+            margin-top: 48rem;
+            width: 56%;
+        }
+       
     }
     .overlay{
         background: rgba(0,0,0,0.5);
@@ -23,17 +122,27 @@ export const GlobalStyle = createGlobalStyle`
         bottom: 0;
         left:0;
         right:0;
+        z-index:9000;
         align-items:center;
         justify-content:center;
         min-height:100vh;
-        overflow-y:hidden;
-        margin-left: 4.7rem;
+        overflow-y: scroll;
+        /* margin-left: 4.7rem;
         
-        margin-top: 4rem;
+        margin-top: 4rem; */
 
         @media screen and (max-width: 675px) {
             margin-left: 0rem;
             margin-top: 0rem;
+        }
+
+        @media screen and (max-height: 675px) {
+            margin-left: 0rem;
+            padding-bottom: 0rem;
+
+            /* padding-top: 30rem; */
+            width: 100%;
+
         }
     }
 

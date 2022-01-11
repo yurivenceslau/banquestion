@@ -1,6 +1,27 @@
 import { Container } from "./styles";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
+
+
 
 export function Dados() {
+ 
+  const classes = useStyles();
+  const [value, setValue] = React.useState('Controlled');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+  };
   return (
     <Container>
       <div className="baseDados">
@@ -10,28 +31,28 @@ export function Dados() {
 
         <div className="dados">
 
-          <div className="nome">
-            <span>Nome:</span>
+          <div className="dado">
+            <span className="indicador">Nome:</span>
             <span >Delair Cavalcante Andrade</span>
           </div>
 
-          <div className="cpf">
-            <span>CPF:</span>
+          <div className="dado">
+            <span className="indicador">CPF:</span>
             <span>088.869.659-09</span>
           </div>
 
-          <div className="email">
-            <span>Email:</span>
+          <div className="dado">
+            <span className="indicador">Email:</span>
             <span>delay@gmail.com</span>
           </div>
 
-          <div className="telefone">
-            <span>Telefone:</span>
+          <div className="dado">
+            <span className="indicador">Telefone:</span>
             <span>(88)994235993</span>
           </div>
 
-          <div className="empresa">
-            <span>Empresa:</span>
+          <div className="dado">
+            <span className="indicador">Empresa:</span>
             <span>Alan Araújo</span>
           </div>
 
@@ -45,35 +66,54 @@ export function Dados() {
 
         <div className="dados">
 
-        <div className="curso">
-            <span>Nome do curso:</span>
+        <div className="dado">
+            <span className="indicador">Curso:</span>
             <span>JavaScript</span>
           </div>
 
           
-          <div className="nome1">
+          {/* <div className="dado">
             <span><h1>Nome do curso:</h1>
-              <input type="text" 
-            // value={"JavaScript"}
-            />
-            {/* Nome do curso: */}
-            </span>
-            {/* <span>JavaScript</span> */}
-          </div>
+            
 
-          <div className="codigo">
-            <span>Código de inscrição:</span>
+            <TextField
+          id="filled-multiline-flexible"
+          // label="Multiline"
+          multiline
+          maxRows={2}
+          // maxLenght={20}
+          value={value}
+          onChange={handleChange}
+          variant="filled"
+        /> */}
+              {/* <textarea name="" id="" cols={3} rows={8} wrap="soft" maxLength={40}
+               readOnly 
+               > */}
+            {/* // value={"JavaScript"} */}
+            {/* </textarea> */}
+            {/* Nome do curso: */}
+            {/* </span> */}
+            {/* <span>JavaScript</span> */}
+          {/* </div> */}
+
+          <div className="dado">
+            <span className="indicador">Código de inscrição:</span>
             <span>088933493</span>
           </div>
 
-          <div className="pagamento">
-            <span>Método de Pagamento:</span>
+          <div className="dado">
+            <span className="indicador">Método de Pagamento:</span>
             <span>Pix</span>
           </div>
 
-          <div className="data">
-            <span>Data de inscrição:</span>
+          <div className="dado">
+            <span className="indicador">Data de inscrição:</span>
             <span>02/05/2021</span>
+          </div>
+
+          <div className="dado">
+            <span className="indicador">Observação:</span>
+            <span>Nenhuma</span>
           </div>
 
         </div>
