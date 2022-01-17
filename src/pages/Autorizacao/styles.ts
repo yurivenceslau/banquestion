@@ -57,7 +57,7 @@ export const Container = styled.main<propsContainer>`
     align-items:center;
     margin:0rem;
     padding: 0.7rem 1rem;
-    /* width: 1rem; */
+    width: 7rem;
     /* height: 0.7rem ; */
     background-image: linear-gradient(to left top, #1A6462, #059E75);
     border: 0;

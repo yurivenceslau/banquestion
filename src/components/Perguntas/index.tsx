@@ -41,11 +41,23 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
         "CREATE, COMMENT, RENAME.",
       ],
     },
+    {
+      pergunta:
+        "(UERR - 2018 - CODESAIMA - Assistente de Informática) - Para realizar a manipulação de Banco de Dados, precisamos de alguns comandos que são divididos nas categorias DDL, DML e DCL. Assinale a alternativa correta, indicando quais os comandos abaixo que fazem parte das referidas categorias respectivamente.",
+      alternativas: [
+        "RENAME, COMMENT, SELECT.",
+        "ALTER, SELECT, GRANT.",
+        "ALTER, SELECT, INSERT.",
+        "SELECT, UPDATE, DELETE.",
+        "CREATE, COMMENT, RENAME.",
+      ],
+    },
   ];
   const [isFinishTestModalOpen, setisFinishTestModalOpen] = useState(false);
 
   const handleFinishTestModalOpen = () => {
     setisFinishTestModalOpen(true);
+    console.log(arr.length);
   };
 
   const handleFinishTestModalClose = () => {

@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -18,6 +18,14 @@ export function Dados() {
  
   const classes = useStyles();
   const [value, setValue] = React.useState('Controlled');
+  const [elemento, setElemento]= useState({
+    nome:"Delair",
+    cpf:"088.869.659-09",
+    email:"delay@gmail.com",
+    telefone:"(88)994235993",
+    empresa:"Alan Araújo",
+    pagamento:"Pix"
+  });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -33,27 +41,27 @@ export function Dados() {
 
           <div className="dado">
             <span className="indicador">Nome:</span>
-            <span >Delair Cavalcante Andrade</span>
+            <span className="nome">{elemento.nome}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">CPF:</span>
-            <span>088.869.659-09</span>
+            <span className="cpf">{elemento.cpf}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Email:</span>
-            <span>delay@gmail.com</span>
+            <span className="email">{elemento.email}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Telefone:</span>
-            <span>(88)994235993</span>
+            <span className="telefone">{elemento.telefone}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Empresa:</span>
-            <span>Alan Araújo</span>
+            <span className="empresa">{elemento.empresa}</span>
           </div>
 
         </div>
@@ -103,7 +111,7 @@ export function Dados() {
 
           <div className="dado">
             <span className="indicador">Método de Pagamento:</span>
-            <span>Pix</span>
+            <span className="pagamento">{elemento.pagamento}</span>
           </div>
 
           <div className="dado">

@@ -23,7 +23,7 @@ interface NovoPerfilProps {
 
 Modal.setAppElement("#root");
 
-export function NovoPerfil({ handleModalClose, ModalOpen, dados }: NovoPerfilProps) {
+export function NovoPerfil({ handleModalClose, ModalOpen, dados, }: NovoPerfilProps) {
   const patern = "(99)99999-9999";
   const patern1 = "999.999.999-99";
 
