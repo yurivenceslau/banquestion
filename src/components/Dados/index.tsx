@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -12,16 +12,52 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+interface State {
+  nome: string;
+  cpf: string;
+  email: string;
+  telefone:string;
+  empresa: string;
+  curso:string;
+  codigo:string;
+  pagamento:string;
+  data:string;
+  observacao:string;
+}
 
+interface propsDados{
+  dados:State;
+  setDados:React.Dispatch<React.SetStateAction<State>>;
+}
 
-export function Dados() {
+export function Dados({ dados
+  ,setDados 
+} :propsDados) {
  
   const classes = useStyles();
-  const [value, setValue] = React.useState('Controlled');
+  // const [value, setValue] = React.useState({setDados});
+  const [elemento, setElemento]= useState({
+    nome:"Delair",
+    cpf:"088.869.659-09",
+    email:"delay@gmail.com",
+    telefone:"(88)994235993",
+    empresa: "Ágil Engenharia",
+    curso:"JavaScript",
+    codigo:"088933493",
+    pagamento:"Pix",
+    data:"02/05/2021",
+    observacao:"Nenhuma",
+  });
+  
+  React.useEffect(() => {
+    dados && setElemento(dados);
+  },[dados]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
+  // setElemento = setDados;
+
+  // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setValue(event.target.value);
+  // };
   return (
     <Container>
       <div className="baseDados">
@@ -33,27 +69,27 @@ export function Dados() {
 
           <div className="dado">
             <span className="indicador">Nome:</span>
-            <span >Delair Cavalcante Andrade</span>
+            <span className="indicado">{elemento.nome}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">CPF:</span>
-            <span>088.869.659-09</span>
+            <span className="indicado">{elemento.cpf}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Email:</span>
-            <span>delay@gmail.com</span>
+            <span className="indicado">{elemento.email}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Telefone:</span>
-            <span>(88)994235993</span>
+            <span className="indicado">{elemento.telefone}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Empresa:</span>
-            <span>Alan Araújo</span>
+            <span className="indicado">{elemento.empresa}</span>
           </div>
 
         </div>
@@ -68,52 +104,27 @@ export function Dados() {
 
         <div className="dado">
             <span className="indicador">Curso:</span>
-            <span>JavaScript</span>
+            <span className="indicado">{elemento.curso}</span>
           </div>
-
-          
-          {/* <div className="dado">
-            <span><h1>Nome do curso:</h1>
-            
-
-            <TextField
-          id="filled-multiline-flexible"
-          // label="Multiline"
-          multiline
-          maxRows={2}
-          // maxLenght={20}
-          value={value}
-          onChange={handleChange}
-          variant="filled"
-        /> */}
-              {/* <textarea name="" id="" cols={3} rows={8} wrap="soft" maxLength={40}
-               readOnly 
-               > */}
-            {/* // value={"JavaScript"} */}
-            {/* </textarea> */}
-            {/* Nome do curso: */}
-            {/* </span> */}
-            {/* <span>JavaScript</span> */}
-          {/* </div> */}
 
           <div className="dado">
             <span className="indicador">Código de inscrição:</span>
-            <span>088933493</span>
+            <span className="indicado">{elemento.codigo}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Método de Pagamento:</span>
-            <span>Pix</span>
+            <span className="indicado">{elemento.pagamento}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Data de inscrição:</span>
-            <span>02/05/2021</span>
+            <span className="indicado">{elemento.data}</span>
           </div>
 
           <div className="dado">
             <span className="indicador">Observação:</span>
-            <span>Nenhuma</span>
+            <span className="indicado">{elemento.observacao}</span>
           </div>
 
         </div>

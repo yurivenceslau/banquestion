@@ -6,16 +6,28 @@ import Modal from "react-modal";
 import { useState } from "react";
 import { NovoPerfil } from "../NovoPerfil";
 
+interface State {
+  nome: string;
+  cpf: string;
+  email: string;
+  telefone:string;
+  empresa: string;
+  curso:string;
+  codigo:string;
+  pagamento:string;
+  data:string;
+  observacao:string;
+}
 
-export function PerfilConteudo() {
-  const [dados] = useState({
-    nome: "werlley",
-    cpf: "025.255.225-69",
-    email: "werlley@gmail.com",
-    telefone: "(88) 58585-5858",
-    empresa: "Ágil Engenharia",
-    pagamento:"Pix",
-  })
+interface propsPerfilConteudo{
+  dados:State;
+  setDados:React.Dispatch<React.SetStateAction<State>>;
+}
+
+
+
+export function PerfilConteudo({ dados,setDados } :propsPerfilConteudo) {
+ 
   const [ModalOpen,setModalOpen] = useState(false);
   const handleModalOpen=()=>{
     setModalOpen(true);
@@ -37,10 +49,10 @@ export function PerfilConteudo() {
         Editar
       </button>
 
-      
-
     </Container>
-      <NovoPerfil handleModalClose={handleModalClose} ModalOpen={ModalOpen} dados={dados}/>
+      <NovoPerfil handleModalClose={handleModalClose} ModalOpen={ModalOpen} dados={dados}
+       setDados={setDados}
+       />
       </>
   );
 }
