@@ -146,8 +146,34 @@ export const ModalPerfil = styled.div`
 
   span {
     display: flex;
-    opacity: 0.8;
+    font-weight: 500;
+    opacity: 0.5;
+    /* background-color: red; */
   }
+
+  select {
+    border: 0;
+    opacity: 90%;
+    min-height: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 20rem;
+    /* margin-left:1rem ; */
+    background-color: whitesmoke;
+    border: 1px solid black;
+
+    @media screen and (min-width: 768px) and (max-width: 768px) {
+      width: 15rem;
+    }
+    @media screen and (min-width: 820px) and (max-width: 820px) {
+      width: 16rem;
+    }
+    @media screen and (min-width: 280px) and (max-width: 280px) {
+      width: 15rem;
+    }
+    }
 
   input {
     border: 0;

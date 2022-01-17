@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   /* align-items:center; */
 
   flex-direction: row;
@@ -97,7 +97,7 @@ export const Container = styled.div`
     /* padding: 0rem 1rem; */
     /* background-color: red; */
     /* border: 1px solid #77787A; */
-    padding: 0;
+    /* padding-bottom:; */
 
     /* border-radius: 0.5rem; */
     /* justify-content:center;
@@ -209,7 +209,7 @@ export const Container = styled.div`
       border-left: 0;
       border-right: 0;
       border-radius: 0rem 0 0.5rem 0.5rem;
-      /* border-top:0 ; */
+      border-bottom:0 ;
     }
 
     /* border-radius: 0.24rem; */
@@ -234,6 +234,9 @@ export const Container = styled.div`
   }
   .indicador {
     font-weight: 700 !important;
+  }
+  .indicado{
+    text-align:right;
   }
 
   .sobre {
