@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logado from "../Logado";
 import Modal from "react-modal"
 import { Container } from "./styles";
 import { IniciarProvaModal } from "../../components/IniciarProvaModal";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 interface propsLogado {
   open: boolean;
@@ -33,6 +34,9 @@ export function Autorizacao({
   const handleStartTestModalClose = () => {
     setisStartTestModalOpen(false);
   };
+  useEffect(() => {
+    handleAvaliacaoClose();
+  }, [])
 
   return (
     <>
@@ -70,6 +74,18 @@ export function Autorizacao({
             </ol>
           </div>
 
+              {/* {
+              document.onkeydown = function(event) {
+              const tecla = Event.keyCode;
+              const tecla1= document.onkeydown
+              console.log(tecla);
+              if (tecla == '122') {
+                 alert('Funcionou o click no F11');
+             }
+             }
+            } */}
+             
+
           <div className="buttonDiv">
             <button
               onClick={handleStartTestModalOpen
@@ -84,6 +100,7 @@ export function Autorizacao({
               <span>Resultado</span>
             </button>
           </div>
+          
         </div>
 
         <IniciarProvaModal 

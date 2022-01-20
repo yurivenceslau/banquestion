@@ -26,7 +26,7 @@ import { useNavigate } from "react-router-dom";
 import  alanImg  from "../../imagens/logoAlan.png"
 import AlanImg from "../../imagens/alan-perfil.jpg"
 import LogoBrancaImg from "../../imagens/LogoBranca.png"
-
+import { useEffect } from "react";
 import { FiAirplay } from "react-icons/fi";
 import { AiFillProfile } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -172,6 +172,11 @@ export default function Logado({
   const handleStartTestModalClose = () => {
     setisStartTestModalOpen(false);
   };
+
+  // useEffect(()=>{
+  //   handleAvaliacaoClose();
+  //   console.log(isStartTestModalOpen);
+  // },[])
   
   return (
     <Container isOpen={open}>
@@ -190,6 +195,7 @@ export default function Logado({
       >
         <Content isOpen={open}>
           <Toolbar>
+          
           
          
             <IconButton style={{ marginRight:'0.8rem',marginLeft:'-0.6rem'}}

@@ -11,7 +11,7 @@ interface propsLogado {
   handleAvaliacaoOpen: () => {};
   handleAvaliacaoClose: () => {};
 }
-
+// window.history.back();
 export function Avaliacao({
   open,
   handleDrawerClose,

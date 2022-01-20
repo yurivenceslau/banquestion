@@ -1,6 +1,7 @@
 import { Container } from './styles';
 import Logado from '../Logado'
 import { ResultQuestoes } from '../../components/ResultQuestoes';
+import { useEffect } from 'react';
 
 
 interface propsLogado {
@@ -19,6 +20,7 @@ export function ResultadoAvaliacao({
   handleAvaliacaoOpen,
   handleAvaliacaoClose,
 }: propsLogado) {
+  
   return (
     <>
       <Logado
