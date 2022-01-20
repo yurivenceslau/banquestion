@@ -149,7 +149,7 @@ export function NovoPerfil({handleModalClose,ModalOpen,dados,setDados}:NovoPerfi
       
       toast.success("Pronto!");
       handleModalClose();
-    setDados({...campo});
+      setDados({...campo});
 
     }
     // window.location.reload()
@@ -207,7 +207,7 @@ export function NovoPerfil({handleModalClose,ModalOpen,dados,setDados}:NovoPerfi
 
             <div className="novo">
               <span>Novo Email:</span>
-              <input
+              <input 
                 type="email"
                 name="email"
                 value={campo.email}
@@ -255,8 +255,9 @@ export function NovoPerfil({handleModalClose,ModalOpen,dados,setDados}:NovoPerfi
         [target.name]: target.value})}>
                   <option value="" disabled>Seleconar</option>
                   <option value="Pix">Pix</option>
-                  <option value="Cartão de débito ">Cartão de débito </option>
-                  <option value="Cartão de credito ">Cartão de credito </option>
+                  <option value="Débito">Cartão de débito </option>
+                  <option value="Credito">Cartão de credito </option> 
+                  <option value="Boleto">Boleto Bancário</option>
                   <option value="Transferência">Transferência bancária</option>
                   <option value="Cheque">Cheque</option>
                   <option value="Dinheiro">Dinheiro</option>

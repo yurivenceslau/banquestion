@@ -4,7 +4,6 @@ import Modal from "react-modal";
 import { Botoes, Container, TituloModal } from './styles';
 import { IoMdClose } from "react-icons/io";
 
-
 interface IniciarProvaModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
@@ -12,6 +11,8 @@ interface IniciarProvaModalProps {
   handleAvaliacaoOpen: () => {};
   handleAvaliacaoClose: () => {};
 }
+
+
 
 Modal.setAppElement("#root");
 
@@ -37,6 +38,11 @@ export function IniciarProvaModal({
         </TituloModal>
         <span>Ao clicar em SIM, você será redirecionado para a prova e o tempo irá comecar a contar e não poderá sair da prova quando iniciar. Você realmente deseja iniciar?</span>
         <Botoes>
+        <div>
+        {/* <button onClick={handle.enter}>
+          Enter fullscreen
+        </button> */}
+      </div>
           <button className='nao' onClick={onRequestClose}>NÃO</button>
           <button className='sim' onClick={
               () => {

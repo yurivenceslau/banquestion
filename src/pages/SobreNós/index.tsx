@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import Logado from "../Logado";
 import { InfoEmpresa } from "../../components/InfoEmpresa";
 

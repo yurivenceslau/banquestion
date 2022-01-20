@@ -12,6 +12,7 @@ interface propsPerguntas {
   handleAvaliacaoClose: () => {};
 }
 
+
 export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:propsPerguntas) {
   const navigate = useNavigate();
   let arr = [
@@ -55,8 +56,33 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
   ];
   const [isFinishTestModalOpen, setisFinishTestModalOpen] = useState(false);
 
+  const verificacao=(id: any,value:any)=>{
+    if(value ===''){
+      console.log("Resposta aqui: ",id, "aqui esta seu gabarito: ",value)
+    }else{
+      console.log("EU NAO AGUENTO MAIS")
+    }
+  }
+
+  const [gabarito,setGabarito]=useState([
+    {id:0,
+      value:true
+    },
+    {id:1,
+      value:false
+    }
+  ])
+
   const handleFinishTestModalOpen = () => {
+    // {arr.map((per, i) => {
+    //   return (
+    //    {per.pergunta} alternativas={per.alternativas} verificacao={(id: any,value: any)=>verificacao(id,value)} 
+    //   );
+    // }}
+    // {alternativas.map(pa)}
     setisFinishTestModalOpen(true);
+    // verificacao(id,value);
+    // handleSubmit(handleSubmit);
     console.log(arr.length);
   };
 
@@ -64,15 +90,22 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
     setisFinishTestModalOpen(false);
   };
 
+  const handleSubmit = (event:any)=>  {
+    event.preventDefault();
+    console.log("Entrou/Enviou");
+  }
+
 
   return (
     <Container>
-      {arr.map((per, idx) => {
+      {arr.map((per, i) => {
         return (
-          <Pergunta key={idx} pergunta={per.pergunta} alternativas={per.alternativas} />
+          <Pergunta key={i} pergunta={per.pergunta} alternativas={per.alternativas} 
+          handleSubmit={handleSubmit} 
+          verificacao={(id: any,value: any)=>verificacao(id,value)}  />
         );
       })}
-      <button type="submit" onClick={handleFinishTestModalOpen}>
+      <button type="submit"  onClick={handleFinishTestModalOpen}>
         <span>
          Enviar
         </span>

@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { Informacoes } from "../../components/Informacoes";
 import Logado from "../Logado";
 
@@ -21,6 +21,7 @@ export function Perfil({
   handleAvaliacaoOpen,
   handleAvaliacaoClose,
 }: propsLogado) {
+  
   return (
     <>
       <Logado

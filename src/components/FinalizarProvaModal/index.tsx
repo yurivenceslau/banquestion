@@ -5,7 +5,6 @@ import { Botoes, Container, TituloModal } from './styles';
 import { IoMdClose } from "react-icons/io";
 import {toast} from 'react-toastify';
 
-
 interface FinalizarProvaModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
@@ -43,9 +42,11 @@ export function FinalizarProvaModal({
         </TituloModal>
         <span>Você realmente deseja finalizar a prova?</span>
         <Botoes>
+        <div>
+      </div>
           <button className='nao' onClick={onRequestClose}>NÃO</button>
           <button className='sim' onClick={
-              () => {confirm()}
+              () => { confirm()}
           }>SIM</button>
         </Botoes>
       </Container>
