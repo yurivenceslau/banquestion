@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, QuestoesCard, QuestoesEstatisticas, QuestoesDados, TituloResultado, DadosTitulo, DadosConteudo, NotaProva, Status } from './styles';
+import { Container, QuestoesCard, QuestoesEstatisticas, QuestoesDados, TituloResultado, DadosTitulo, NotaProva, Status, QuestoesGrafico } from './styles';
 import CircularProgress, { CircularProgressProps } from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -31,9 +31,10 @@ import { Card } from 'primereact/card';
 
 
 export function ResultQuestoes() {
-  const [progress, setProgress] = useState(75);
-  const errada = 1;
-  const certa = 3;
+  const errada = 2;
+  const certa = 10;
+  const total = certa + errada;
+  var razao = 0;
   const PieChartDemo = () => {
     const chartData = {
         labels: ['Certas', 'Erradas'],
@@ -67,6 +68,31 @@ export function ResultQuestoes() {
     </div>
   );
   }
+  interface QuestoesProps{
+    certa: number;
+    errada: number;
+    total: number;
+  }
+  const nota = ({certa, total}: QuestoesProps) =>{
+    razao = certa/total ;
+    razao = razao*10;
+    razao = Number(razao.toFixed(1));
+    return razao;
+  }
+  var cor = "";
+
+  const mudanca = () => {
+    if (razao >= 7){
+       cor= "Aprovado";
+    }else{
+      cor= "Reprovado";
+    }
+    return( cor)
+     
+  }
+  // console.log(cor);
+  
+ 
   return (
     <Container>
       <TituloResultado>
@@ -78,35 +104,38 @@ export function ResultQuestoes() {
       <QuestoesEstatisticas>
         <QuestoesCard>
         <div className="card_questoes">
-          <span>TOTAL DE QUESTÕES:</span>
+          <span>Total de Questões:</span>
           <div className="bolinha">
-            <span>4</span>
+            <span>{total}</span>
           </div>
         </div>
         <div className="card_questoesCertas">
-          <span className='certas'>QUESTÕES CORRETAS:</span>
+          <span className='certas'>Questões Corretas:</span>
           <div className="bolinha">
-            <span className='certas'>3</span>
+            <span className='certas'>{certa}</span>
           </div>
         </div>
         <div className="card_questoesErradas">
-          <span className='erradas'>QUESTÕES ERRADAS:</span>
+          <span className='erradas'>Questões Erradas:</span>
           <div className="bolinha">
-            <span className='erradas'>1</span>
+            <span className='erradas'>{errada}</span>
           </div>
         </div>
         </QuestoesCard>
-            {PieChartDemo()}
+        <QuestoesGrafico>
+          {PieChartDemo()}
+        </QuestoesGrafico>
             <div className="statusNota">
-              <NotaProva>
+              <NotaProva isCor={nota({certa, errada, total})}>
                 <span>Nota da Prova:</span>
                 <div className="bolinha">
-                  <span className='nota'>7.5</span>
+                  <span className='nota'>{nota({certa, errada, total})}</span>
                 </div>
               </NotaProva>
-              <Status>
+              <Status isCor={razao}>
                 <span>Status do Participante:</span>
-                <span className='situacao'>Aprovado</span>
+                <span className='situacao'>
+                  {mudanca()}</span>
               </Status>
             </div>
       </QuestoesEstatisticas>
