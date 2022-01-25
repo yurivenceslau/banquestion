@@ -29,6 +29,12 @@ export function MainRoutes() {
     setEntrada(false);
   };
 
+  const [textFinishTimes, setTextFinishTimes] = useState(1);
+  
+  const handleTextFinishTimes = () => {
+    setTextFinishTimes(textFinishTimes+1);
+  }
+
 
 
   return (
@@ -46,6 +52,8 @@ export function MainRoutes() {
             entrada={entrada}
             handleAvaliacaoOpen={handleAvaliacaoOpen}
             handleAvaliacaoClose={handleAvaliacaoClose}
+            textFinishTimes={textFinishTimes}
+            handleTextFinishTimes={handleTextFinishTimes}
           />
         }
       />
@@ -71,6 +79,8 @@ export function MainRoutes() {
             entrada={entrada}
             handleAvaliacaoOpen={handleAvaliacaoOpen}
             handleAvaliacaoClose={handleAvaliacaoClose}
+            textFinishTimes={textFinishTimes}
+            handleTextFinishTimes={handleTextFinishTimes}
           />
         }
       />

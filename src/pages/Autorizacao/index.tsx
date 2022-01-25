@@ -13,6 +13,9 @@ interface propsLogado {
   entrada: boolean;
   handleAvaliacaoOpen: () => {};
   handleAvaliacaoClose: () => {};
+  textFinishTimes: number;
+  handleTextFinishTimes: () =>{};
+
 }
 
 export function Autorizacao({
@@ -22,9 +25,10 @@ export function Autorizacao({
   entrada,
   handleAvaliacaoOpen,
   handleAvaliacaoClose,
+  textFinishTimes,
+  handleTextFinishTimes,
 }: propsLogado) {
   const navigate = useNavigate();
-
   const [isStartTestModalOpen, setisStartTestModalOpen] = useState(false);
 
   const handleStartTestModalOpen = () => {
@@ -87,18 +91,22 @@ export function Autorizacao({
              
 
           <div className="buttonDiv">
-            <button
-              onClick={handleStartTestModalOpen
+            {
+              textFinishTimes < 3 && <button
+                onClick={handleStartTestModalOpen
+              }
+              >
+                <span>Iniciar</span>
+              </button>
             }
-            >
-              <span>Iniciar</span>
-            </button>
-            <button
-            className="botaoResultado"
-            onClick={() => navigate("/ResultadoAvaliacao")}
-            >
-              <span>Resultado</span>
-            </button>
+            {
+              textFinishTimes != 0 && <button
+              className="botaoResultado"
+              onClick={() => navigate("/ResultadoAvaliacao")}
+              >
+                <span>Resultado</span>
+              </button>
+            }
           </div>
           
         </div>
@@ -108,7 +116,8 @@ export function Autorizacao({
         onRequestClose={handleStartTestModalClose} 
         entrada={entrada}
         handleAvaliacaoOpen={handleAvaliacaoOpen}
-        handleAvaliacaoClose={handleAvaliacaoClose}/>
+        handleAvaliacaoClose={handleAvaliacaoClose}
+        />
       </Container>
     </>
   );
