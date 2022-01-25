@@ -142,8 +142,6 @@ export function NovoPerfil({handleModalClose,ModalOpen,dados,setDados}:NovoPerfi
         toast.error("CPF obrigatório!");
       }else if(campo.cpf.length < 14){
         toast.error("CPF inválido!");
-      }else if(campo.pagamento === ""){
-        toast.error("Pagamento inválido!");
       }
     else{
       
@@ -249,8 +247,9 @@ export function NovoPerfil({handleModalClose,ModalOpen,dados,setDados}:NovoPerfi
 
             <div className="novo">
               <span>Método de pagamento:</span>
+              <input type="text" disabled value={campo.pagamento} />
               {/* <label htmlFor="standard-select">Standard Select</label> */}
-              <div className="select">
+              {/* <div className="select">
                 <select id="standard-select" name="pagamento" value={campo.pagamento} onChange={({target})=> setCampo({...campo,
         [target.name]: target.value})}>
                   <option value="" disabled>Seleconar</option>
@@ -262,7 +261,7 @@ export function NovoPerfil({handleModalClose,ModalOpen,dados,setDados}:NovoPerfi
                   <option value="Cheque">Cheque</option>
                   <option value="Dinheiro">Dinheiro</option>
                 </select>
-              </div>
+              </div> */}
               {/* <TextField
                       required
                       id="outlined-select-currency"

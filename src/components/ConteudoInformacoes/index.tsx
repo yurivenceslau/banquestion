@@ -12,7 +12,7 @@ export function ConteudoInformacoes() {
     empresa: "Ágil Engenharia",
     curso:"JavaScript",
     codigo:"088933493",
-    pagamento:"",
+    pagamento:"Pix",
     data:"02/05/2021",
     observacao:"Nenhuma",
   })

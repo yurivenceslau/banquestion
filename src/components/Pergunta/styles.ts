@@ -22,7 +22,7 @@ export const Container = styled.div`
     }
   }
 
-  form {
+  .opcoes {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -55,13 +55,34 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
     },
   ];
   const [isFinishTestModalOpen, setisFinishTestModalOpen] = useState(false);
+  const vetor= arr.length;
+  
+
+  let lastId = 0;
+
+// export default function(prefix='id') {
+//     lastId++;
+//     return `${prefix}${lastId}`;
+// }
 
   const verificacao=(id: any,value:any)=>{
-    if(value ===''){
-      console.log("Resposta aqui: ",id, "aqui esta seu gabarito: ",value)
-    }else{
-      console.log("EU NAO AGUENTO MAIS")
-    }
+    console.log(id);
+    lastId++;
+    return (console.log(`existe isso de ids: ${lastId}`));
+    
+    // if(id? valor=id+1)
+    
+    // if(1===id.length){
+    //   console.log("deu");
+    // }else{
+    //   console.log("insuficiente");
+      
+    // }
+    // if(value ===''){
+    //   console.log("Resposta aqui: ",id, "aqui esta seu gabarito: ",value)
+    // }else{
+    //   console.log("EU NAO AGUENTO MAIS")
+    // }
   }
 
   const [gabarito,setGabarito]=useState([
@@ -73,21 +94,20 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
     }
   ])
 
-  const handleFinishTestModalOpen = () => {
-    // {arr.map((per, i) => {
-    //   return (
-    //    {per.pergunta} alternativas={per.alternativas} verificacao={(id: any,value: any)=>verificacao(id,value)} 
-    //   );
-    // }}
-    // {alternativas.map(pa)}
+  const handleFinishTestModalOpen = (event:any) => {
     setisFinishTestModalOpen(true);
-    // verificacao(id,value);
-    // handleSubmit(handleSubmit);
-    console.log(arr.length);
+    event.preventDefault();
+    console.log("Entrou/Enviou");
+
   };
+
+//   const confirmacao=()=>{
+   
+// }
 
   const handleFinishTestModalClose = () => {
     setisFinishTestModalOpen(false);
+    // confirmacao();
   };
 
   const handleSubmit = (event:any)=>  {
@@ -97,19 +117,30 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
 
 
   return (
-    <Container>
+    <Container onSubmit={handleFinishTestModalOpen}
+     
+     >
+    {/* <form > */}
+
       {arr.map((per, i) => {
         return (
-          <Pergunta key={i} pergunta={per.pergunta} alternativas={per.alternativas} 
-          handleSubmit={handleSubmit} 
-          verificacao={(id: any,value: any)=>verificacao(id,value)}  />
+          <Pergunta 
+            key={i} pergunta={per.pergunta}
+            vetor={vetor} 
+            alternativas={per.alternativas} 
+            handleSubmit={handleFinishTestModalOpen} 
+            verificacao={(id: any,value: any)=>verificacao(id,value)}
+            index={i}  
+          />
         );
       })}
-      <button type="submit"  onClick={handleFinishTestModalOpen}>
+      <button type="submit"  //onClick={handleFinishTestModalOpen}
+      >
         <span>
          Enviar
         </span>
       </button>
+      {/* </form> */}
       <FinalizarProvaModal 
         isOpen={isFinishTestModalOpen} 
         onRequestClose={handleFinishTestModalClose} 

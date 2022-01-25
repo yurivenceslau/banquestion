@@ -1,14 +1,18 @@
 
 
+import { useState } from "react";
 import { Container } from "./styles";
 export interface props{
   pergunta:string,
+  vetor:number;
   alternativas:string[],
   verificacao: any,
-  handleSubmit:any,
+  index:number,
+  handleSubmit:(event:any)=>void,
+  // confirmacao:()=>{},
 }
 
-export function Pergunta({pergunta,alternativas,verificacao,handleSubmit}:props) {
+export function Pergunta({pergunta,alternativas,verificacao,index,handleSubmit,vetor}:props) {
   // muakt7hk
   // let objeto = {
   //   pergunta:
@@ -31,25 +35,39 @@ export function Pergunta({pergunta,alternativas,verificacao,handleSubmit}:props)
 
   //   }
   //  }
-    
+
+  const [contador,Setcontador] = useState()
+  const confirmacao=()=>{
+      // if(vetor===alternativas.length){
+          // console.log("esse é o vetor: "+vetor);
+
+          console.log("esse é as alternativas: "+ alternativas.length);
+          console.log("meu deus");
+      // }
+  }
+  //   {if(alternativas){
+      
+  //   }else
+  // }
   
 
   return (
-    <Container>
+    <Container  >
       <div className="pergunta">
             <span>{pergunta ?? "Pergunta"}</span>
       </div>
 
-      <form onSubmit={handleSubmit} method="POST">
+      <div className="opcoes"  >
         {alternativas.map((alternativa, i) => {
           return(
             <div key={i} className="opcao">
-            <input type="radio" name="radio" value={''} id={`${i}`} required onChange={(e: React.ChangeEvent<HTMLInputElement>)=>verificacao(e.currentTarget.id, e.currentTarget.value)} />
-            <label htmlFor={`${i}`}>{alternativa}</label>
-          </div>
+              <input type="radio" name={`radio${index}`} value={''} id={`${i}`} required onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{verificacao(e.currentTarget.id, e.currentTarget.value);confirmacao()}} />
+              <label htmlFor={`${i}`}>{alternativa}</label> 
+            </div>
           )
         })}
-      </form>
+      </div>
     </Container>
+
   );
 }
