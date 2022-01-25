@@ -10,10 +10,12 @@ interface propsPerguntas {
   entrada: boolean;
   handleAvaliacaoOpen: () => {};
   handleAvaliacaoClose: () => {};
+  textFinishTimes: number
+  handleTextFinishTimes: () => {};
 }
 
 
-export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:propsPerguntas) {
+export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose,textFinishTimes,handleTextFinishTimes}:propsPerguntas) {
   const navigate = useNavigate();
   let arr = [
     {
@@ -146,7 +148,9 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose}:pro
         onRequestClose={handleFinishTestModalClose} 
         entrada={entrada}
         handleAvaliacaoOpen={handleAvaliacaoOpen}
-        handleAvaliacaoClose={handleAvaliacaoClose}/>
+        handleAvaliacaoClose={handleAvaliacaoClose}
+        textFinishTimes={textFinishTimes}
+        handleTextFinishTimes={handleTextFinishTimes}/>
     </Container>
   );
 }

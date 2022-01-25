@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 interface propsContainer {
   isOpen: boolean;
+  testTimes?: number;
 }
-
+  
 export const Container = styled.main<propsContainer>`
   display: flex;
   align-items: center;
@@ -139,3 +140,4 @@ export const Container = styled.main<propsContainer>`
     }
   }
 `;
+

@@ -10,6 +10,8 @@ interface propsLogado {
   entrada: boolean;
   handleAvaliacaoOpen: () => {};
   handleAvaliacaoClose: () => {};
+  textFinishTimes: number;
+  handleTextFinishTimes: () => {};
 }
 // window.history.back();
 export function Avaliacao({
@@ -19,6 +21,8 @@ export function Avaliacao({
   entrada,
   handleAvaliacaoOpen,
   handleAvaliacaoClose,
+  textFinishTimes,
+  handleTextFinishTimes,
 }: propsLogado) {
   return (
     <>
@@ -31,9 +35,13 @@ export function Avaliacao({
         handleDrawerOpen={handleDrawerOpen}
       /> */}
       <Container isOpen={open}>
-        <Questionario entrada={entrada}
+        <Questionario 
+        entrada={entrada}
         handleAvaliacaoOpen={handleAvaliacaoOpen}
-        handleAvaliacaoClose={handleAvaliacaoClose}/>
+        handleAvaliacaoClose={handleAvaliacaoClose}
+        textFinishTimes={textFinishTimes}
+        handleTextFinishTimes={handleTextFinishTimes}
+        />
       </Container>
     </>
   );

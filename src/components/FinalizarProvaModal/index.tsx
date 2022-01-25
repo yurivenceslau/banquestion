@@ -11,6 +11,8 @@ interface FinalizarProvaModalProps {
   entrada: boolean;
   handleAvaliacaoOpen: () => {};
   handleAvaliacaoClose: () => {};
+  textFinishTimes: number;
+  handleTextFinishTimes: () => {};
 }
 
 Modal.setAppElement("#root");
@@ -20,9 +22,13 @@ export function FinalizarProvaModal({
   onRequestClose,
   entrada,
   handleAvaliacaoOpen,
-  handleAvaliacaoClose, }: FinalizarProvaModalProps) {
+  handleAvaliacaoClose,
+  textFinishTimes,
+  handleTextFinishTimes,
+}: FinalizarProvaModalProps) {
     const navigate = useNavigate();
     const confirm=()=>{
+      handleTextFinishTimes()
       navigate("/autorizacao");
       handleAvaliacaoClose();
       toast.success("Avaliação enviada");
