@@ -10,7 +10,7 @@ interface propsTemporizador{
 
 export function Temporizador({handleAvaliacaoClose, handleTextFinishTimes}: propsTemporizador) {
   const [segRest, setSegRest] = useState(10);
-  const [minutes, setMinutes] = useState(1);
+  const [minutes, setMinutes] = useState(40);
   const [seconds, setSeconds] = useState(0);
   const navigate = useNavigate();
 
@@ -69,8 +69,15 @@ export function Temporizador({handleAvaliacaoClose, handleTextFinishTimes}: prop
   
   return (
     <Container>
+      <span>Tempo restante: </span>
+      {
+        String(minutes).length < 2 && <span>0</span>
+      }
       <span>{minutes}</span>
       <span>:</span>
+      {
+        String(seconds).length < 2 && <span>0</span>
+      }
       <span>{seconds}</span>
     </Container>
   );
