@@ -127,6 +127,10 @@ export const QuestoesEstatisticas = styled.div`
         border-radius: 50%;
         background-color: #1A6462;
         margin-top: 0.5rem;
+        @media screen and (max-width: 675px) {
+            height: 5.3rem;
+            width: 5.3rem;
+        }
     }
     .statusNota{
         display: flex;
@@ -190,6 +194,7 @@ export const NotaProva = styled.div<propsIscor>`
         background-color:${(props) => (props.isCor >=7? "#31A368" : "#B93437")};
         /* background-color: #31A368; */
     }
+    
 
 `;
 
@@ -218,7 +223,6 @@ export const Status = styled.div<propsIscor>`
         /* color: #31A368; */
         font-weight: bold;
     }
-
 `;
 export const QuestoesCard = styled.div`
     display: flex;
@@ -227,7 +231,7 @@ export const QuestoesCard = styled.div`
     justify-content: space-around;
     @media screen and (max-width: 675px) {
         margin-bottom: 3rem;
-        height: 31rem;
+        height: 32rem;
     }
     @media screen and (min-width: 765px) and (max-width: 915px) {
         flex-direction: row;

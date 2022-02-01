@@ -29,7 +29,7 @@ export function MainRoutes() {
     setEntrada(false);
   };
 
-  const [textFinishTimes, setTextFinishTimes] = useState(1);
+  const [textFinishTimes, setTextFinishTimes] = useState(0);
   
   const handleTextFinishTimes = () => {
     setTextFinishTimes(textFinishTimes+1);

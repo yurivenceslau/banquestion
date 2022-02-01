@@ -4,7 +4,6 @@ import Logado from "../Logado";
 import Modal from "react-modal"
 import { Container } from "./styles";
 import { IniciarProvaModal } from "../../components/IniciarProvaModal";
-import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 interface propsLogado {
   open: boolean;
@@ -62,15 +61,24 @@ export function Autorizacao({
               <span>Instruções</span>
               <li>
                 Ao clicar no botão de iniciar você tera o tempo de
-                <strong> 1 (uma) hora </strong>
+                <strong> 40 (quarenta) minutos </strong>
                 para realizar a avaliação.
               </li>
-              <li>Não faça consulta de nenhuma natureza.</li>
-              <li>Cada questão tera apenas uma alternativa correta.</li>
+              <li>
+                <strong>Não </strong> 
+                faça consulta de nenhuma natureza.</li>
+              <li>Cada questão tera apenas
+                <strong> 1 (uma) alternativa </strong> 
+                correta.</li>
               <li>
                 Ao finalizar click no botão
                 <strong> Enviar </strong>e sua resposta será enviada com
                 sucesso.
+              </li>
+              <li>
+                Você pode fazer essa prova no máximo
+                 <strong> 3 (três) vezes</strong>
+                 . Ao finalizar a última vez, o botão de iniciar ficará indisponível 
               </li>
               <li>
                 Se já finalizou a prova uma vez, você pode clicar no botão<strong> Resultado </strong>para ver sua pontuação.

@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { useNavigate } from "react-router-dom";
 import Modal from "react-modal";
 import { Botoes, Container, TituloModal } from './styles';
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import { IoMdClose } from "react-icons/io";
 
 interface IniciarProvaModalProps {
@@ -22,7 +23,7 @@ export function IniciarProvaModal({
   entrada,
   handleAvaliacaoOpen,
   handleAvaliacaoClose, }: IniciarProvaModalProps) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <Modal 

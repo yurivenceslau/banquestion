@@ -4,6 +4,7 @@ import { Container } from "./styles";
 import { useState } from "react";
 import { FinalizarProvaModal } from "../FinalizarProvaModal";
 import {toast} from 'react-toastify';
+import { Temporizador } from "../Temporizador";
 
 
 interface propsPerguntas {
@@ -15,7 +16,7 @@ interface propsPerguntas {
 }
 
 
-export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose,textFinishTimes,handleTextFinishTimes}:propsPerguntas) {
+export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose,textFinishTimes,handleTextFinishTimes,}:propsPerguntas) {
   const navigate = useNavigate();
   let arr = [
     {
@@ -62,11 +63,6 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose,text
 
   let lastId = 0;
 
-// export default function(prefix='id') {
-//     lastId++;
-//     return `${prefix}${lastId}`;
-// }
-
   const verificacao=(id: any,value:any)=>{
     console.log(id);
     lastId++;
@@ -99,7 +95,6 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose,text
   const handleFinishTestModalOpen = (event:any) => {
     setisFinishTestModalOpen(true);
     event.preventDefault();
-    console.log("Entrou/Enviou");
 
   };
 
@@ -119,11 +114,11 @@ export function Perguntas({entrada,handleAvaliacaoOpen,handleAvaliacaoClose,text
 
 
   return (
-    <Container onSubmit={handleFinishTestModalOpen}
-     
-     >
-    {/* <form > */}
-
+    <Container onSubmit={handleFinishTestModalOpen}>
+      <Temporizador
+        handleAvaliacaoClose={handleAvaliacaoClose}
+        handleTextFinishTimes={handleTextFinishTimes}
+      />
       {arr.map((per, i) => {
         return (
           <Pergunta 

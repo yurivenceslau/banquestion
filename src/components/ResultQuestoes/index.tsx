@@ -31,9 +31,9 @@ import { Card } from 'primereact/card';
 
 
 export function ResultQuestoes() {
-  const errada = 2;
-  const certa = 10;
-  const total = certa + errada;
+  const [total, setTotal] = useState(12);
+  const [certa, setCerta] = useState(11);
+  const [errada, setErrada] = useState(total - certa);
   var razao = 0;
   const PieChartDemo = () => {
     const chartData = {
@@ -87,7 +87,7 @@ export function ResultQuestoes() {
     }else{
       cor= "Reprovado";
     }
-    return( cor)
+    return(cor)
      
   }
   // console.log(cor);

@@ -1,6 +1,7 @@
 import Logado from "../Logado";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "./styles";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import { Questionario } from "../../components/Questionario";
 
 interface propsLogado {
@@ -24,16 +25,9 @@ export function Avaliacao({
   textFinishTimes,
   handleTextFinishTimes,
 }: propsLogado) {
+
   return (
     <>
-      {/* <Logado
-        open={open}
-        entrada={entrada}
-        handleAvaliacaoOpen={handleAvaliacaoOpen}
-        handleAvaliacaoClose={handleAvaliacaoClose}
-        handleDrawerClose={handleDrawerClose}
-        handleDrawerOpen={handleDrawerOpen}
-      /> */}
       <Container isOpen={open}>
         <Questionario 
         entrada={entrada}
@@ -43,6 +37,7 @@ export function Avaliacao({
         handleTextFinishTimes={handleTextFinishTimes}
         />
       </Container>
+
     </>
   );
 }
